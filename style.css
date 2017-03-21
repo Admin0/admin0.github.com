@@ -1,36 +1,65 @@
-body{
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+/*@import url(iconfont/material-icons.css);*/
+
+@import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+/*@import url(style_card.css);*/
+
+body {
     text-align: center;
+    background: #e5e5e5;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: rgba(0, 0, 0, .87);
 }
 
 a {
     text-decoration: none;
     display: inline-block;
     color: #000;
-    transition:.25s;padding: .5em .75em;
+    transition: .25s;
+    padding: .5em .75em;
     margin: -0.75em -.75em;
 }
-a:hover  {
+
+a:hover {
     box-shadow: 2px 0px 5px rgba(0, 0, 0, .25);
-    background:#fff;
-    z-index:10;position: relative;
+    background: #fff;
+    z-index: 10;
+    position: relative;
 }
 
-.title  {
+.title {
     font-size: 5em;
 }
 
 section {
     height: 100%;
     text-align: center;
-
 }
-.item   {
-    display: block;
-    margin:3em auto;
+
+.item {
+    display: inline-block;
+    margin: 3em 1em;
     text-align: center;
     width: 128px;
-    height:128px;
+    height: 128px;
 }
 
-.item img   {width: 100%;}
-.item p     {margin: 0;}
+.item img {
+    width: 100%;
+}
+
+.item p {
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#title {
+    text-align: center;
+    font-size: 10em;
+}
