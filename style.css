@@ -37,7 +37,11 @@ header, footer {
   background: #212121;
   color: #ddd;
 }
-header{top: 0;}
+
+header {
+  top: 0;
+}
+
 footer {
   bottom: 0;
 }
@@ -64,6 +68,11 @@ section {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.item p span {
+  text-transform: none;
 }
 
 #title {
