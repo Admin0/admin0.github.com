@@ -1,9 +1,11 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
 /*@import url(iconfont/material-icons.css);*/
 
 @import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
 /*@import url(style_card.css);*/
 
 body {
@@ -24,10 +26,10 @@ a {
 }
 
 a:hover {
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, .25);
+  /* box-shadow: 2px 0px 5px rgba(0, 0, 0, .25);
   background: #fff;
   z-index: 10;
-  position: relative;
+  position: relative; */
 }
 
 header, footer {
@@ -53,10 +55,14 @@ section {
 
 .item {
   display: inline-block;
-  margin: 3em 1em;
+  margin: 1em .5em;
   text-align: center;
   width: 128px;
   height: 128px;
+}
+
+.item a {
+  width: 100%;
 }
 
 .item img {
@@ -85,4 +91,14 @@ h2 {
   font-weight: normal;
   color: rgba(0, 0, 0, .55);
   margin: 1em 0;
+}
+
+@media handheld, only screen and (max-device-width:480px), only screen and (max-device-width:320px), screen and (max-width:600px) {
+  body {
+    margin: 0;
+  }
+  .item {
+    width: 64px;
+    height: 64px;
+  }
 }
