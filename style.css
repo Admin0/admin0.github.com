@@ -96,10 +96,22 @@ h2 {
 @media handheld, only screen and (max-device-width:480px), only screen and (max-device-width:320px), screen and (max-width:600px) {
   body {
     margin: 0;
+    text-align: left;
+    overflow-x: hidden;
+  }
+  h2 {
+    text-align: center;
+  }
+  section {
+    text-align: left;
+  }
+  header, footer {
+    display: none;
   }
   .item {
-    width: 64px;
-    height: 64px;
+    width: 20vw;
+    height: 20vw;
+    margin: 1em 2vw;
   }
   .item p {
     display: none;
