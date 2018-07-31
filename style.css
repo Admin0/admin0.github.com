@@ -101,4 +101,7 @@ h2 {
     width: 64px;
     height: 64px;
   }
+  .item p {
+    display: none;
+  }
 }
