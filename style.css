@@ -1,13 +1,10 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
-
 /*@import url(iconfont/material-icons.css);*/
-
 @import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
 @import url(https://fonts.googleapis.com/earlyaccess/hanna.css);
 
 /*@import url(style_card.css);*/
-
 body {
   text-align: center;
   background: #e5e5e5;
@@ -33,11 +30,29 @@ a:hover {
 }
 
 header, footer {
-  font-size: 5em;
+  font-size: 3em;
   width: 100%;
   position: fixed;
-  background: #212121;
-  color: #ddd;
+  line-height: 1;
+  padding: .25em 0 .5em;
+  word-spacing: 1em;
+  letter-spacing: .25em;
+  background: rgb(131, 140, 148);
+  color: #f8f8ff;
+  text-shadow:
+    0px 1px 1px #ddd,
+    0px 2px 1px #d6d6d6,
+    0px 3px 1px #ccc,
+    0px 4px 1px #c5c5c5,
+    0px 5px 1px #c1c1c1,
+    0px 6px 1px #bbb,
+    0px 7px 1px #777,
+    0px 8px 3px rgba(91, 106, 106, 0.9),
+    0px 9px 5px rgba(91, 106, 106, 0.8),
+    0px 10px 7px rgba(91, 106, 106, 0.7),
+    0px 11px 9px rgba(91, 106, 106, 0.6),
+    0px 12px 11px rgba(91, 106, 106, 0.5),
+    0px 13px 15px rgba(91, 106, 106, 0.4);
 }
 
 header {
@@ -99,20 +114,25 @@ h2 {
     text-align: left;
     overflow-x: hidden;
   }
+
   h2 {
     text-align: center;
   }
+
   section {
     text-align: left;
   }
+
   header, footer {
     display: none;
   }
+
   .item {
     width: 20vw;
     height: 20vw;
     margin: 1em 2vw;
   }
+
   .item p {
     display: none;
   }
