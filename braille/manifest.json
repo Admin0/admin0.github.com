@@ -17,11 +17,11 @@
     "notifications"
   ],
   "icons": [{
-    "src": "image/favicon_b.ico",
+    "src": "https://jinh.kr/morse/image/favicon_b.ico",
     "type": "image/ico",
     "sizes": "16x16"
   }, {
-    "src": "image/favicon_b.webp",
+    "src": "https://jinh.kr/morse/image/favicon_b.webp",
     "type": "image/webp",
     "sizes": "512x512"
   }],

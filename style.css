@@ -62,7 +62,7 @@ footer {
 section {
   height: 100%;
   text-align: center;
-  display: inline-flex;
+  display: inline-block;
 }
 
 .item {
@@ -70,12 +70,10 @@ section {
   margin: 1em .5em;
   text-align: center;
   width: 128px;
-  height: 160px;
 }
 
 .item a {
   width: 100%;
-  height: 100%;
 }
 
 .item img {
