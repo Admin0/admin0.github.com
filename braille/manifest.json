@@ -17,11 +17,11 @@
     "notifications"
   ],
   "icons": [{
-    "src": "image/favicon.ico",
+    "src": "image/favicon_b.ico",
     "type": "image/ico",
     "sizes": "16x16"
   }, {
-    "src": "image/icon.webp",
+    "src": "image/icon_b.webp",
     "type": "image/webp",
     "sizes": "512x512"
   }],
