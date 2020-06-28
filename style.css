@@ -107,6 +107,12 @@ h2 {
   margin: 1em 0;
 }
 
+img.margin0 {
+  border-radius: .5em;
+  width: calc(128px - 24px);
+  height: calc(128px - 24px);
+}
+
 @media handheld, only screen and (max-device-width:480px), only screen and (max-device-width:320px), screen and (max-width:600px) {
   body {
     margin: 0;
@@ -133,5 +139,10 @@ h2 {
 
   .item p {
     display: none;
+  }
+
+  img.margin0 {
+    width: 16vw;
+    height: 16vw;
   }
 }
