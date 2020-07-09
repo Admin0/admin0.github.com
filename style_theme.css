@@ -1,0 +1,51 @@
+.morse {
+  background: #4284f3;
+}
+
+.braille {
+  background: #f44336;
+}
+
+.SAT_kr {
+  background: #d32f2f;
+}
+
+.bucket {
+  background: #ff5722;
+}
+
+.qualify {
+  background: #fafafa;
+}
+
+.item.qualify a {
+  color: #000;
+}
+
+.lotto {
+  background: #ffb300;
+}
+
+.battle {
+  background: #3f51b5;
+}
+
+.mmm {
+  background: #eeeeee;
+}
+
+.item.mmm a {
+  color: #000;
+}
+
+.BIT {
+  background: #00c853;
+}
+
+.Morse {
+  background: #4caf50;
+}
+
+.jw {
+  background: #424242;
+}
