@@ -1,5 +1,20 @@
 const is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); // mobile check
 
+const IMG_ANDROID = "images/android-white-18dp.svg";
+const IMG_ANDROID_DARK = "images/android-black-18dp.svg";
+const IMG_WEB = "images/public-white-18dp.svg";
+const IMG_WEB_DARK = "images/public-black-18dp.svg";
+const IMG_WORK = "images/work-white-18dp.svg";
+const IMG_WORK_DARK = "images/work-black-18dp.svg";
+const IMG_LANG = "images/unicode-white.svg";
+const IMG_LANG_DARK = "images/unicode-black.svg";
+const IMG_ART = "images/palette-white-18dp.svg";
+const IMG_ART_DARK = "images/palette-black-18dp.svg";
+const IMG_GAME = "images/casino-white-18dp.svg";
+const IMG_GAME_DARK = "images/casino-black-18dp.svg";
+const IMG_QUALIFIED = "images/verified-white-18dp.svg";
+const IMG_QUALIFIED_DARK = "images/verified-black-18dp.svg";
+
 let item_list = [{
     title: "기만의 번역기 (모스 부호)",
     id: "morse",
@@ -9,7 +24,7 @@ let item_list = [{
     since_date: "19",
     url: "/morse/",
     description: "왠지 쿨함. 어째선지 멋짐. 알 수 없지만 끌림.",
-    tag: ["morse", "translator"],
+    tag: ["web", "lang"],
     theme: "4284f3"
   }, {
     title: "기만의 번역기 (점자)",
@@ -20,7 +35,7 @@ let item_list = [{
     since_date: "06",
     url: "/braille/",
     description: "문자 ⇄ 브라유 점자 - 정체성에 혼란이 오지만 일단 가능!",
-    tag: ["braille", "translator"],
+    tag: ["web", "lang"],
     theme: "f44336"
   }, {
     title: "#qualify",
@@ -31,7 +46,7 @@ let item_list = [{
     since_date: "29",
     url: "/qualify/",
     description: "이 프로젝트는 버킷리스트의 하위 프로젝트로 개발되었습니다.",
-    tag: ["qualification", "exam"],
+    tag: ["web", "qualified"],
     theme: "ffffff"
   }, {
     title: "기만의 모스 부호",
@@ -42,18 +57,18 @@ let item_list = [{
     since_date: 28,
     url: "//play.google.com/store/apps/details?id=com.morsecode.translator.jinh&hl=ko",
     description: "기만의 모스는 [기적의 만능 모스]의 준말입니다.",
-    tag: ["android"],
+    tag: ["android", "lang"],
     theme: "4caf50"
   }, {
     title: "8-BIT Icon Theme",
     id: "bit",
-    icon: "images/android-white-18dp.svg",
+    icon: IMG_ANDROID,
     since_year: 2013,
     since_month: 8,
     since_date: 17,
     url: "/apps/8-BIT/",
     description: "[8-BIT]는 [8-BIT Icon Theme]의 약자입니다.",
-    tag: ["android"],
+    tag: ["web", "art"],
     theme: "00c853"
   }, {
     title: "대학수학능력시험 카운터",
@@ -64,7 +79,7 @@ let item_list = [{
     since_date: 13,
     url: "/SAT_kr/",
     description: "화학공학과 특) 육각형 잘 그림.",
-    tag: ["SAT"],
+    tag: ["web", "qualified"],
     theme: "d32f2f"
   }, {
     title: "로또 번호 생성기",
@@ -75,7 +90,7 @@ let item_list = [{
     since_date: 29,
     url: "/lotto/",
     description: "나눔로또6/45의 예상 추첨 번호를 스마트하게 생성합니다.",
-    tag: ["로또"],
+    tag: ["web", "game"],
     theme: "ffb300"
   }, {
     title: "전투 시뮬레이터",
@@ -86,10 +101,10 @@ let item_list = [{
     since_date: 3,
     url: "//blog.jinh.kr/297",
     description: "쉽고 빠른 모의 전투 실험. 나이스한 체력 게이지 표시로 직관적임. 능력치 설정 가능.",
-    tag: [""],
+    tag: ["web", "game"],
     theme: "3f51b5"
   }, {
-    title: "네모네모 멈멈미의 저주",
+    title: "네모네모 멈뭄미믜 저주가 걸린 글",
     id: "mmm",
     icon: "images/pets-white-18dp.svg",
     since_year: 2016,
@@ -97,7 +112,7 @@ let item_list = [{
     since_date: 19,
     url: "//blog.jinh.kr/835",
     description: "담신믄 네모네모 멈뭄미뫄 눈미 마주치고 말맜습니다. 담신믄 미제 네모네모 멈뭄미믜 저주로 돔그란 글자를 칠 수 멊습니다. 멈멈!",
-    tag: [""],
+    tag: ["web", "lang"],
     theme: "009688"
   }, {
     title: "<span class='spoiler'>ㅈㅇㅅㅇ</span> 초보자 가이드 2.0",
@@ -108,7 +123,7 @@ let item_list = [{
     since_date: 19,
     url: "//**.jinh.kr/",
     description: "powered by team Cartel.",
-    tag: [""],
+    tag: ["web", "work"],
     theme: "424242"
   }, {
     title: "Sample",
@@ -119,7 +134,7 @@ let item_list = [{
     since_date: 21,
     url: "//blog.jinh.kr/",
     description: "본격 변방 블로그.",
-    tag: [""],
+    tag: ["web"],
     theme: "212121"
   }, {
     title: "버킷 리스트",
@@ -130,7 +145,7 @@ let item_list = [{
     since_date: 3,
     url: "/bucket/",
     description: "만들었다. 버킷리스트!",
-    tag: [""],
+    tag: ["web", "qualified"],
     theme: "ff5722"
   },
 
@@ -151,6 +166,7 @@ let item_list = [{
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
+
 
 function deg2rad(deg) {
   return deg * Math.PI / 180;
@@ -201,7 +217,9 @@ function hex2hsl(hex) {
 }
 
 for (var i = 0; i < item_list.length; i++) {
-  item_list[i].hue = hex2hsl(item_list[i].theme)[1] == 0 ? 255 + hex2hsl(item_list[i].theme)[2] : hex2hsl(item_list[i].theme)[0];
+  let hsl = hex2hsl(item_list[i].theme);
+  item_list[i].hue = hsl[1] == 0 ? 255 + hsl[2] : hsl[0];
+  item_list[i].lightness = hsl[2];
 }
 
 function card_spread(data, key, type) {
@@ -223,7 +241,7 @@ function card_spread(data, key, type) {
   for (var i = 0; i < data.length; i++) {
     let year = data[i].since_year.toString().substring(2, 4);
     let month = (data[i].since_month.toString().length == 1) ? "0" + data[i].since_month : data[i].since_month;
-
+    let is_light = data[i].lightness >= 70;
     // function tag(i) {
     //   let tag = "";
     //   for (var j = 0; j < item_list[i].tag.length; j++) {
@@ -231,12 +249,23 @@ function card_spread(data, key, type) {
     //   }
     //   return tag;
     // }
-    let info = "<span class='ititle'>" + item_list[i].title + "</span><br>" +
-      "<span class='idate'>" + monthNames[item_list[i].since_month - 1] /*.substring(0, 3).toUpperCase()*/ + "-" + item_list[i].since_year + "</span><br>" +
-      "<span class='idescription'>" + item_list[i].description + "</span>"
+    let info = "<span class='ititle'>" + data[i].title + "</span><br>" +
+      "<span class='idate'>" + monthNames[data[i].since_month - 1] /*.substring(0, 3).toUpperCase()*/ + "-" + data[i].since_year + "</span><br>" +
+      "<span class='idescription'>" + data[i].description + "</span>"
+
+    let tag =
+      "<span class='tag'>" +
+      (data[i].tag.indexOf("web") != -1 ? "<img title='웹 앱' src='" + (is_light ? IMG_WEB_DARK : IMG_WEB) + "'>" : "") +
+      (data[i].tag.indexOf("android") != -1 ? "<img title='안드로이드 앱' src='" + (is_light ? IMG_ANDROID_DARK : IMG_ANDROID) + "'>" : "") +
+      (data[i].tag.indexOf("lang") != -1 ? "<img title='언어 / 문자 / 유니코드' src='" + (is_light ? IMG_LANG_DARK : IMG_LANG) + "'>" : "") +
+      (data[i].tag.indexOf("art") != -1 ? "<img title='예술' src='" + (is_light ? IMG_ART_DARK : IMG_ART) + "'>" : "") +
+      (data[i].tag.indexOf("game") != -1 ? "<img title='확률 / 주사위 굴림' src='" + (is_light ? IMG_GAME_DARK : IMG_GAME) + "'>" : "") +
+      (data[i].tag.indexOf("work") != -1 ? "<img title='업무' src='" + (is_light ? IMG_WORK_DARK : IMG_WORK) + "'>" : "") +
+      (data[i].tag.indexOf("qualified") != -1 ? "<img title='자기개발' src='" + (is_light ? IMG_QUALIFIED_DARK : IMG_QUALIFIED) + "'>" : "") +
+      "</span>"
     // + "<br><span class='itag'>" + tag(i) + "</span>"
 
-    $("section").append("<div class='item " + data[i].id + "'><div class='card' style='background:#" + data[i].theme + "' onclick='location.href=\"" + data[i].url + "\"'><span class='arrow'>‹</span><img class='icon' src='" + data[i].icon + "'><span class='title'>" + data[i].title + "</span><span class='date'>" + month + "/" + year + "</span><span class='url'>" + data[i].url.toUpperCase() + "</span><div class='info'>" + info + "</div></div></div>");
+    $("section").append("<div class='item " + data[i].id + "'><div class='card " + (is_light ? "light" : "") + "' style='background:#" + data[i].theme + "' onclick='location.href=\"" + data[i].url + "\"'><span class='arrow'>‹</span><img class='icon' src='" + data[i].icon + "'><span class='title'>" + data[i].title + "</span><span class='date'>" + month + "/" + year + "</span><span class='url'>" + data[i].url.toUpperCase() + "</span><div class='info'>" + info + "</div>" + tag + "</div></div>");
   }
 
   if (!is_mobile) card_rotate(-window.pageYOffset / scroll_unit);

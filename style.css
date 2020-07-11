@@ -136,7 +136,7 @@ section {
   top: calc(50% - 30px);
 }
 
-.item.qualify .title, .item.qualify .date, .item.qualify .url, .item.qualify .arrow {
+.card.light .title, .card.light .date, .card.light .url, .card.light .arrow {
   color: #212121;
 }
 
@@ -162,6 +162,19 @@ section {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.card .tag {
+  right: 6px;
+  position: absolute;
+  top: 6px;
+  opacity: .5;
+}
+
+.card .tag img {
+  width: 24px;
+  height: 24px;
+  margin-left: 6px;
 }
 
 .info {
