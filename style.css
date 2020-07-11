@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
 @import url('style_theme.css');
 
-/*@import url(style_card.css);*/
+::selection {
+  background: rgba(0, 0, 0, 0);
+}
+
 body {
-  text-align: center;
   /* background: #e5e5e5; */
   font-family: 'Noto Sans KR', sans-serif;
   color: rgba(0, 0, 0, .87);
@@ -50,7 +52,6 @@ section {
   width: 100%;
   height: fit-content;
   min-height: 200px;
-  text-align: center;
   display: inline-block;
   position: relative;
   position: fixed;
@@ -58,19 +59,13 @@ section {
   top: 50%;
 }
 
-.info {
-  position: fixed;
-  width: 100%;
-}
-
 .item {
   display: inline-block;
   margin: 1em .5em;
-  text-align: center;
   height: 200px;
   width: 316px;
   left: calc(50% - 100px);
-  transition: .25s;
+  transition: transform .25s;
   position: absolute;
   transform-origin: 50% 700%;
 }
@@ -113,10 +108,11 @@ section {
   height: 100%;
   transform: rotate(-90deg);
   border-radius: 10px;
-  position: absolute;
+  position: relative;
   background: #444;
   box-shadow: -2px 0px 5px rgba(0, 0, 0, .25);
   cursor: pointer;
+  color: #fff;
 }
 
 /*
@@ -125,7 +121,6 @@ section {
   box-shadow: 7px 0px 10px rgba(0, 0, 0, .25);
 } */
 .card .title {
-  color: #fff;
   left: 32px;
   position: absolute;
   top: calc(50% + 1em);
@@ -163,7 +158,6 @@ section {
   width: 100px;
   left: 200px;
   text-align: left;
-  color: #fff;
   font-size: .75em;
   top: calc(50% + 40px);
   white-space: nowrap;
@@ -176,12 +170,46 @@ section {
   width: 120px;
   left: 32px;
   text-align: left;
-  color: #fff;
   font-size: .75em;
   top: calc(50% + 40px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.info {
+  color: #777;
+  position: absolute;
+  left: 0;
+  opacity: .02;
+  transition: .25s;
+  width: 400px;
+  left: calc(100% + 16px);
+  top: 64px;
+}
+
+.item.on .info,
+.item:hover .info {
+  opacity: 1;
+}
+
+.info .ititle {
+  font-weight: bold;
+  top: 16px;
+  left: 0;
+}
+
+.info .idate {
+  font-weight: lighter;
+  color: #aaa;
+  top: 48px;
+  left: 0;
+}
+
+.info .idescription {
+  font-weight: lighter;
+  color: #aaa;
+  white-space: nowrap;
 }
 
 #title {
