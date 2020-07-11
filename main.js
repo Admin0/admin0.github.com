@@ -234,23 +234,25 @@ function card_spread(data, key, type) {
     let info = "<span class='ititle'>" + item_list[i].title + "</span><br>" +
       "<span class='idate'>" + monthNames[item_list[i].since_month - 1] /*.substring(0, 3).toUpperCase()*/ + "-" + item_list[i].since_year + "</span><br>" +
       "<span class='idescription'>" + item_list[i].description + "</span>"
-      // + "<br><span class='itag'>" + tag(i) + "</span>"
+    // + "<br><span class='itag'>" + tag(i) + "</span>"
 
     $("section").append("<div class='item " + data[i].id + "'><div class='card' style='background:#" + data[i].theme + "' onclick='location.href=\"" + data[i].url + "\"'><span class='arrow'>‹</span><img class='icon' src='" + data[i].icon + "'><span class='title'>" + data[i].title + "</span><span class='date'>" + month + "/" + year + "</span><span class='url'>" + data[i].url + "</span><div class='info'>" + info + "</div></div></div>");
   }
 
-  card_rotate(-window.scrollY / 20)
+  if (!is_mobile) card_rotate(-window.pageYOffset / scroll_unit);
 }
 
 const card_width = 200;
 let rotate_list = [];
+let rotate_unit = 15; //rotate origin
+let scroll_unit = 20;
 
 function card_rotate(val) {
-  let rotate_unit = 15; //rotate origin
   let rotate_origin = window.innerWidth / 200; //rotate origin
   $(".item").each(function() {
     let i = $(this).index();
-    let rotate = -30 + (i + .5) * rotate_unit / 2 + val;
+    // let rotate = -3.75 + (i + .5) * rotate_unit / 2 + val;
+    let rotate = i * rotate_unit / 2 + val;
     rotate_list[i] = Math.abs(rotate);
     rotate = rotate < 45 ? rotate : rotate < -45 ? -45 : 45;
     // let pos_x = Math.abs(Math.sin(deg2rad(rotate > -45 ? rotate : -45)) * card_width * rotate_origin);
@@ -282,16 +284,34 @@ function card_rotate(val) {
   $('.item').removeClass("on");
   $('.item:nth(' + target + ')').addClass("on");
 
-  $('body').height(item_list.length * 2300 / rotate_unit);
-
+  $('body').height(window.innerHeight + (item_list.length - 1) * rotate_unit * scroll_unit / 2);
+  // console.log(11 * rotate_unit / 2 - window.pageYOffset / scroll_unit);
 }
+
 card_spread(item_list, "hue");
 
-window.addEventListener('scroll', (event) => {
-  // console.log('Scrolling...');
-  card_rotate(-window.scrollY / 20)
-});
-window.addEventListener('resize', (event) => {
-  // console.log('Scrolling...');
-  card_rotate(-window.scrollY / 20)
+if (!is_mobile) {
+
+  window.addEventListener('scroll', function(event) {
+    card_rotate(-window.pageYOffset / scroll_unit);
+  });
+  window.addEventListener('resize', function(event) {
+    card_rotate(-window.pageYOffset / scroll_unit);
+  });
+
+  // $(document).ready(function() {
+  //   $("#splash").addClass("off");
+  // });
+  $(window).on('load', function() {
+    setTimeout(function() {
+      window.scroll({
+        top: 30 * scroll_unit,
+        behavior: 'smooth'
+      });
+    }, 500);
+  });
+}
+
+$(window).on('load', function() {
+  $("#splash").addClass("off");
 });
