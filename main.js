@@ -40,7 +40,7 @@ let item_list = [{
     since_year: 2018,
     since_month: 2,
     since_date: 28,
-    url: "https://play.google.com/store/apps/details?id=com.morsecode.translator.jinh&hl=ko",
+    url: "//play.google.com/store/apps/details?id=com.morsecode.translator.jinh&hl=ko",
     description: "기만의 모스는 [기적의 만능 모스]의 준말입니다.",
     tag: ["android"],
     theme: "4caf50"
@@ -236,7 +236,7 @@ function card_spread(data, key, type) {
       "<span class='idescription'>" + item_list[i].description + "</span>"
     // + "<br><span class='itag'>" + tag(i) + "</span>"
 
-    $("section").append("<div class='item " + data[i].id + "'><div class='card' style='background:#" + data[i].theme + "' onclick='location.href=\"" + data[i].url + "\"'><span class='arrow'>‹</span><img class='icon' src='" + data[i].icon + "'><span class='title'>" + data[i].title + "</span><span class='date'>" + month + "/" + year + "</span><span class='url'>" + data[i].url + "</span><div class='info'>" + info + "</div></div></div>");
+    $("section").append("<div class='item " + data[i].id + "'><div class='card' style='background:#" + data[i].theme + "' onclick='location.href=\"" + data[i].url + "\"'><span class='arrow'>‹</span><img class='icon' src='" + data[i].icon + "'><span class='title'>" + data[i].title + "</span><span class='date'>" + month + "/" + year + "</span><span class='url'>" + data[i].url.toUpperCase() + "</span><div class='info'>" + info + "</div></div></div>");
   }
 
   if (!is_mobile) card_rotate(-window.pageYOffset / scroll_unit);

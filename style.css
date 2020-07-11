@@ -54,15 +54,19 @@ section {
   width: 100%;
   height: fit-content;
   min-height: 200px;
-  display: inline-block;
   position: relative;
   position: fixed;
   left: 0;
   top: 50%;
 }
 
+.control {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}
+
 .item {
-  display: inline-block;
   margin: 1em .5em;
   height: 200px;
   width: 316px;
@@ -70,31 +74,6 @@ section {
   transition: transform .25s;
   position: absolute;
   transform-origin: 50% 700%;
-}
-
-.item a {
-  width: 100%;
-  height: 100%;
-  color: #fff;
-}
-
-.item img {
-  max-width: 128px;
-  max-height: 128px;
-  width: 100%;
-  height: 100%;
-}
-
-.item p {
-  margin: 0;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  text-transform: uppercase;
-}
-
-.item p span {
-  text-transform: none;
 }
 
 .item .since {
@@ -132,7 +111,7 @@ section {
 .card .title {
   left: 32px;
   position: absolute;
-  top: calc(50% + 1em);
+  top: calc(50% + 0em);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -148,14 +127,14 @@ section {
   height: 32px;
   left: 34px;
   position: absolute;
-  top: calc(50% - 16px);
+  top: calc(50% - 32px);
 }
 
 .card .arrow {
   color: #fff;
   left: 12px;
   position: absolute;
-  top: calc(50% - 1em);
+  top: calc(50% - 30px);
 }
 
 .item.qualify .title, .item.qualify .date, .item.qualify .url, .item.qualify .arrow {
@@ -252,19 +231,30 @@ img.margin0 {
 }
 
 @media handheld, only screen and (max-width:600px) {
-  body {}
+  body {
+    overflow-x: hidden;
+  }
 
   section {
     position: relative;
+    overflow: hidden;
   }
 
   header, footer {
     position: static;
   }
 
+  .control {
+    text-align: center;
+    position: static;
+    bottom: 1em;
+    right: 1em;
+  }
+
   .item {
     position: relative;
     left: calc(50% - 158px);
+    margin: 2em 0;
   }
 
   .card {
@@ -272,6 +262,16 @@ img.margin0 {
   }
 
   .info {
+    opacity: 0;
+  }
+
+  .item.on .card,
+  .card:hover {
+    margin-top: 0;
+  }
+
+  .item.on .info,
+  .card:hover .info {
     opacity: 0;
   }
 }
