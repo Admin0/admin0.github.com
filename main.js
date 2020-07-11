@@ -260,8 +260,8 @@ function card_rotate(val) {
     function get_r(rotate) {
       if (rotate - i < -30) { // left end
         return -30 + i;
-      } else if (rotate - i > 29 - item_list.length) { // right end
-        return 29 + i - item_list.length;
+      } else if (rotate - i > 31 - item_list.length) { // right end
+        return 31 + i - item_list.length;
       } else {
         return rotate;
       }
