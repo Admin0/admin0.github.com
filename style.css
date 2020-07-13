@@ -54,7 +54,6 @@ section {
   width: 100%;
   height: fit-content;
   min-height: 200px;
-  position: relative;
   position: fixed;
   left: 0;
   top: 50%;
@@ -67,12 +66,12 @@ section {
 }
 
 .item {
+  width: 200px;
   height: 200px;
-  width: 316px;
-  left: calc(50% - 158px);
+  left: calc(50% - 100px);
   transition: transform .25s;
   position: absolute;
-  transform-origin: 50% 700%;
+  /* transform-origin: 50% 700%; */
 }
 
 .item .since {
@@ -80,13 +79,14 @@ section {
   top: 8px;
   right: 12px;
   opacity: .75;
-  font-size: .75em
+  font-size: .75em;
 }
 
 .card {
-  width: 100%;
-  height: 100%;
+  width: 316px;
+  height: 200px;
   transform: rotate(-90deg);
+  transform-origin: calc(50% - 29px) calc(50% + 29px);
   border-radius: 10px;
   position: relative;
   background: #444;
