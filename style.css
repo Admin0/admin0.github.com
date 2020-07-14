@@ -129,13 +129,6 @@ section {
   top: calc(50% - 32px);
 }
 
-.card .arrow {
-  color: #fff;
-  left: 12px;
-  position: absolute;
-  top: calc(50% - 30px);
-}
-
 .card.light .title, .card.light .date, .card.light .url, .card.light .arrow {
   color: #212121;
 }
@@ -154,7 +147,7 @@ section {
 
 .card .url {
   position: absolute;
-  width: 120px;
+  width: 160px;
   left: 32px;
   text-align: left;
   font-size: .75em;
@@ -186,6 +179,7 @@ section {
   width: 400px;
   left: calc(100% + 16px);
   top: 64px;
+  pointer-events: none;
 }
 
 .item.on .info,
@@ -230,13 +224,13 @@ img.margin0 {
   height: calc(128px - 24px);
 }
 
-.spoiler {
+.spoiler, .SPOILER {
   color: transparent !important;
   background: #000;
   cursor: not-allowed;
 }
 
-.spoiler::selection {
+.spoiler::selection, .SPOILER::selection {
   color: transparent !important;
   background: #000;
   cursor: not-allowed;

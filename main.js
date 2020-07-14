@@ -52,7 +52,7 @@ let item_list = [{
     title: "기만의 모스 부호",
     id: "morse_android",
     icon: "images/morse.svg",
-    since_year: 2018,
+    since_year: 2013,
     since_month: 2,
     since_date: 28,
     url: "//play.google.com/store/apps/details?id=com.morsecode.translator.jinh&hl=ko",
@@ -115,13 +115,13 @@ let item_list = [{
     tag: ["web", "lang"],
     theme: "009688"
   }, {
-    title: "<span class='spoiler'>ㅈㅇㅅㅇ</span> 초보자 가이드 2.0",
+    title: "<span class='spoiler'>jw　　</span> 초보자 가이드 2.0",
     id: "jw",
     icon: "images/jw.svg",
     since_year: 2017,
     since_month: 1,
     since_date: 19,
-    url: "//**.jinh.kr/",
+    url: "//<span class=\"spoiler\">jw.jinh.kr</span>/",
     description: "powered by team Cartel.",
     tag: ["web", "work"],
     theme: "424242"
@@ -147,6 +147,17 @@ let item_list = [{
     description: "만들었다. 버킷리스트!",
     tag: ["web", "qualified"],
     theme: "ff5722"
+  }, {
+    title: "Instagram",
+    id: "instagram",
+    icon: "images/Instagram_simple_icon.svg",
+    since_year: 2015,
+    since_month: 12,
+    since_date: 25,
+    url: "//www.instagram.com/user_no.02/",
+    description: "You are what you eat.",
+    tag: [""],
+    theme: "C13584"
   },
 
   //  {
@@ -218,7 +229,8 @@ function hex2hsl(hex) {
 
 for (var i = 0; i < item_list.length; i++) {
   let hsl = hex2hsl(item_list[i].theme);
-  item_list[i].hue = hsl[1] == 0 ? 255 + hsl[2] : hsl[0];
+  // item_list[i].hue = hsl[0];
+  item_list[i].hue = hsl[1] == 0 ? 360 + hsl[2] : hsl[0];
   item_list[i].lightness = hsl[2];
 }
 
@@ -265,7 +277,7 @@ function card_spread(data, key, type) {
       "</span>"
     // + "<br><span class='itag'>" + tag(i) + "</span>"
 
-    $("section").append("<div class='item " + data[i].id + "'><div class='card " + (is_light ? "light" : "") + "' style='background:#" + data[i].theme + "' onclick='location.href=\"" + data[i].url + "\"'><span class='arrow'>‹</span><img class='icon' src='" + data[i].icon + "'><span class='title'>" + data[i].title + "</span><span class='date'>" + month + "/" + year + "</span><span class='url'>" + data[i].url.toUpperCase() + "</span><div class='info'>" + info + "</div>" + tag + "</div></div>");
+    $("section").append("<div class='item " + data[i].id + "'><div class='card " + (is_light ? "light" : "") + "' style='background:#" + data[i].theme + "' onclick='location.href=\"" + data[i].url + "\"'><img class='icon' src='" + data[i].icon + "'><span class='title'>" + data[i].title.toUpperCase() + "</span><span class='date'>" + month + "/" + year + "</span><span class='url'>" + data[i].url.toUpperCase() + "</span><div class='info'>" + info + "</div>" + tag + "</div></div>");
   }
 
   if (!is_mobile) card_rotate(-window.pageYOffset / scroll_unit);
