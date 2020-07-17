@@ -1,5 +1,9 @@
 const is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); // mobile check
 
+const is_ie = navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1); // ie check
+
+if (is_ie) location.replace('/v1/'); // if ie
+
 const IMG_ANDROID = "images/android-white-18dp.svg";
 const IMG_ANDROID_DARK = "images/android-black-18dp.svg";
 const IMG_WEB = "images/public-white-18dp.svg";
