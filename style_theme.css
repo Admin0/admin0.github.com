@@ -53,3 +53,72 @@
   background: #d6249f !important;
   background: radial-gradient(circle at 10% 90%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
 }
+
+/*******************
+ *     JW CARD     *
+ *******************/
+.jw_card .html {
+  width: 316px;
+  height: 200px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  color: #000;
+  font-size: 9px;
+  line-height: 1.25;
+}
+
+.jw_card .date,
+.jw_card .title {
+  display: none;
+}
+
+.jw_card .dept,
+.jw_card .name,
+.jw_card .addr {
+  position: absolute;
+}
+
+.jw_card .dept,
+.jw_card .name {
+  top: calc(50% - 3.25em);
+  left: 10px;
+}
+
+.jw_card .corp {
+  font-size: 2em;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  left: 35%;
+  position: absolute;
+  top: 13%;
+}
+
+.jw_card .name {
+  top: calc(50% - 1em);
+  font-size: 2em;
+  font-family: 'Noto Serif KR', serif;
+}
+
+.jw_card .addr {
+  left: 35%;
+  white-space: break-spaces;
+  bottom: 0;
+  right: 3em;
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-left: 2px solid darkorange;
+  padding: 0 0 3em 1em;
+}
+
+.jw_card .addr span {
+  white-space: nowrap;
+}
+
+.jw_card img {
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
+}

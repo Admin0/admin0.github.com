@@ -163,6 +163,20 @@ let item_list = [{
     tag: [""],
     theme: "C13584"
   },
+  
+  // {
+  //   title: "<span class='spoiler'>재원산업</span>주식회사",
+  //   id: "jw_card",
+  //   icon: "images/jw.svg",
+  //   since_year: 2017,
+  //   since_month: 1,
+  //   since_date: 19,
+  //   url: "",
+  //   description: "Here's my card.",
+  //   tag: [],
+  //   theme: "ffffff",
+  //   html: "<span class='corp'><img src='images/logo_jaewon.png'>재원산업주식회사</span><span class='dept'>품질경영실</span><span class='name'>정　진　희</span><span class='addr'><span style='text-decoration:underline; font-weight:bold;'>본사 · 공장</span>\r전남 여수시 낙포단지길 79\r<span>직통전화 (061)690-9284 C·P 010-2031-3222</span>\r<span>대표전화 (061) 690-9200 FAX (061) 686-5345</span>\r<span>E-mail : jhjeong@jaewon.co.kr</span>\r\r<span style='text-decoration:underline;'>서울사무소</span>\r<span>서울시 강남구 영동대로 511, 4008호</span>\r<span>대표전화 (02) 6000-6787~8 FAX (02) 6000-6885</span></span>"
+  // },
 
   //  {
   // title: "　　0000-0000-0000-0000",
@@ -281,7 +295,7 @@ function card_spread(data, key, type) {
       "</span>"
     // + "<br><span class='itag'>" + tag(i) + "</span>"
 
-    $("section").append("<div class='item " + data[i].id + "'><div class='card " + (is_light ? "light" : "") + "' style='background:#" + data[i].theme + "' onclick='location.href=\"" + data[i].url + "\"'><img class='icon' src='" + data[i].icon + "'><span class='title'>" + data[i].title.toUpperCase() + "</span><span class='date'>" + month + "/" + year + "</span><span class='url'>" + data[i].url.toUpperCase() + "</span><div class='info'>" + info + "</div>" + tag + "</div></div>");
+    $("section").append("<div class='item " + data[i].id + "'><div class='card " + (is_light ? "light" : "") + "' style='background:#" + data[i].theme + "' onclick='location.href=\"" + data[i].url + "\"'><img class='icon' src='" + data[i].icon + "'><span class='title'>" + data[i].title.toUpperCase() + "</span><span class='date'>" + month + "/" + year + "</span><span class='url'>" + data[i].url.toUpperCase() + "</span><div class='info'>" + info + "</div>" + tag + (data[i].html != undefined ? "<div class='html'>" + data[i].html + "</div>" : "") + "</div></div>");
   }
 
   if (!is_mobile) card_rotate(-window.pageYOffset / scroll_unit);
