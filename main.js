@@ -162,8 +162,19 @@ let item_list = [{
     description: "You are what you eat.",
     tag: [""],
     theme: "C13584"
+  }, {
+    title: "#resume",
+    id: "resume",
+    icon: "images/work-white-18dp.svg",
+    since_year: 2020,
+    since_month: 08,
+    since_date: 15,
+    url: "//jw.jinh.kr/job/",
+    description: "연락 기다립니다.",
+    tag: ["web", "work","art"],
+    theme: "607d8b"
   },
-  
+
   // {
   //   title: "<span class='spoiler'>재원산업</span>주식회사",
   //   id: "jw_card",
