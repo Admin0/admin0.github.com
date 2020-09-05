@@ -68,7 +68,7 @@ section {
   width: 200px;
   height: 200px;
   left: calc(50% - 100px);
-  transition: transform .1s;
+  transition: transform .5s;
   position: absolute;
   /* transform-origin: 50% 700%; */
 }
