@@ -171,7 +171,7 @@ let item_list = [{
     since_date: 15,
     url: "//jw.jinh.kr/resume/",
     description: "연락 기다립니다.",
-    tag: ["web", "work","art"],
+    tag: ["web", "work", "art"],
     theme: "607d8b"
   },
 
@@ -362,12 +362,13 @@ card_spread(item_list, "hue");
 
 if (!is_mobile) {
 
-  window.addEventListener('scroll', function(event) {
+  window.addEventListener('scroll', _.throttle(function() {
     card_rotate(-window.pageYOffset / scroll_unit);
-  });
-  window.addEventListener('resize', function(event) {
+  }, 100));
+
+  window.addEventListener('resize', _.throttle(function() {
     card_rotate(-window.pageYOffset / scroll_unit);
-  });
+  }, 100));
 
   // $(document).ready(function() {
   //   $("#splash").addClass("off");
