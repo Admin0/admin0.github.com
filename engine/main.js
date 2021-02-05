@@ -29,7 +29,7 @@ let item_list = [{
     url: "/morse/",
     description: "왠지 쿨함. 어째선지 멋짐. 알 수 없지만 끌림.",
     tag: ["web", "lang"],
-    theme: "4284f3"
+    theme: "#4284f3"
   }, {
     title: "기만의 번역기 (점자)",
     id: "braille",
@@ -40,7 +40,7 @@ let item_list = [{
     url: "/braille/",
     description: "문자 ⇄ 브라유 점자 - 정체성에 혼란이 오지만 일단 가능!",
     tag: ["web", "lang"],
-    theme: "f44336"
+    theme: "#f44336"
   }, {
     title: "#qualify",
     id: "qualify",
@@ -51,7 +51,7 @@ let item_list = [{
     url: "/qualify/",
     description: "이 프로젝트는 버킷리스트의 하위 프로젝트로 개발되었습니다.",
     tag: ["web", "qualified"],
-    theme: "ffffff"
+    theme: "#ffffff"
   }, {
     title: "기만의 모스 부호",
     id: "morse_android",
@@ -62,7 +62,7 @@ let item_list = [{
     url: "//play.google.com/store/apps/details?id=com.morsecode.translator.jinh&hl=ko",
     description: "기만의 모스는 [기적의 만능 모스]의 준말입니다.",
     tag: ["android", "lang"],
-    theme: "4caf50"
+    theme: "#4caf50"
   }, {
     title: "8-BIT Icon Theme",
     id: "bit",
@@ -73,7 +73,7 @@ let item_list = [{
     url: "/apps/8-BIT/",
     description: "[8-BIT]는 [8-BIT Icon Theme]의 약자입니다.",
     tag: ["web", "art"],
-    theme: "00c853"
+    theme: "#00c853"
   }, {
     title: "대학수학능력시험 카운터",
     id: "SAT_kr",
@@ -84,7 +84,7 @@ let item_list = [{
     url: "/SAT_kr/",
     description: "화학공학과 특) 육각형 잘 그림.",
     tag: ["web", "qualified"],
-    theme: "d32f2f"
+    theme: "#d32f2f"
   }, {
     title: "로또 번호 생성기",
     id: "lotto",
@@ -95,7 +95,7 @@ let item_list = [{
     url: "/lotto/",
     description: "나눔로또6/45의 예상 추첨 번호를 스마트하게 생성합니다.",
     tag: ["web", "game"],
-    theme: "ffb300"
+    theme: "#ffb300"
   }, {
     title: "전투 시뮬레이터",
     id: "battle",
@@ -106,7 +106,7 @@ let item_list = [{
     url: "//blog.jinh.kr/297",
     description: "쉽고 빠른 모의 전투 실험. 나이스한 체력 게이지 표시로 직관적임. 능력치 설정 가능.",
     tag: ["web", "game"],
-    theme: "3f51b5"
+    theme: "#3f51b5"
   }, {
     title: "네모네모 멈뭄미믜 저주가 걸린 글",
     id: "mmm",
@@ -117,7 +117,7 @@ let item_list = [{
     url: "//blog.jinh.kr/835",
     description: "담신믄 네모네모 멈뭄미뫄 눈미 마주치고 말맜습니다. 담신믄 미제 네모네모 멈뭄미믜 저주로 돔그란 글자를 칠 수 멊습니다. 멈멈!",
     tag: ["web", "lang"],
-    theme: "009688"
+    theme: "#009688"
   }, {
     title: "<span class='spoiler'>jw　　</span> 초보자 가이드 4.0",
     id: "jw",
@@ -128,7 +128,7 @@ let item_list = [{
     url: "//jw.jinh.kr/",
     description: "powered by team Cartel.",
     tag: ["web", "work"],
-    theme: "424242"
+    theme: "#424242"
   }, {
     title: "Sample",
     id: "blog",
@@ -139,7 +139,7 @@ let item_list = [{
     url: "//blog.jinh.kr/",
     description: "본격 변방 블로그.",
     tag: ["web"],
-    theme: "212121"
+    theme: "#212121"
   }, {
     title: "버킷 리스트",
     id: "bucket",
@@ -150,7 +150,7 @@ let item_list = [{
     url: "/bucket/",
     description: "만들었다. 버킷리스트!",
     tag: ["web", "qualified"],
-    theme: "ff5722"
+    theme: "#ff5722"
   }, {
     title: "Instagram",
     id: "instagram",
@@ -161,7 +161,7 @@ let item_list = [{
     url: "//www.instagram.com/user_no.04/",
     description: "You are what you eat.",
     tag: [""],
-    theme: "C13584"
+    theme: "#C13584"
   }, {
     title: "#resume",
     id: "resume",
@@ -172,7 +172,7 @@ let item_list = [{
     url: "//tk.jinh.kr/resume/",
     description: "연락 기다립니다.",
     tag: ["web", "work", "art"],
-    theme: "607d8b"
+    theme: "#607d8b"
   },
 
   // {
@@ -306,7 +306,7 @@ function card_spread(data, key, type) {
       "</span>"
     // + "<br><span class='itag'>" + tag(i) + "</span>"
 
-    $("section").append("<div class='item " + data[i].id + "'><div class='card " + (is_light ? "light" : "") + "' style='background:#" + data[i].theme + "' onclick='location.href=\"" + data[i].url + "\"'><img class='icon' src='" + data[i].icon + "'><span class='title'>" + data[i].title.toUpperCase() + "</span><span class='date'>" + month + "/" + year + "</span><span class='url'>" + data[i].url.toUpperCase() + "</span><div class='info'>" + info + "</div>" + tag + (data[i].html != undefined ? "<div class='html'>" + data[i].html + "</div>" : "") + "</div></div>");
+    $("section").append("<div class='item " + data[i].id + "'><a href='" + data[i].url + "' class='card " + (is_light ? "light" : "") + "' style='background:" + data[i].theme + "'><img class='icon' src='" + data[i].icon + "'><span class='title'>" + data[i].title.toUpperCase() + "</span><span class='date'>" + month + "/" + year + "</span><span class='url'>" + data[i].url.toUpperCase() + "</span><div class='info'>" + info + "</div>" + tag + (data[i].html != undefined ? "<div class='html'>" + data[i].html + "</div>" : "") + "</a></div>");
   }
 
   if (!is_mobile) card_rotate(-window.pageYOffset / scroll_unit);
