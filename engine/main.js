@@ -119,13 +119,13 @@ let item_list = [{
     tag: ["web", "lang"],
     theme: "009688"
   }, {
-    title: "<span class='spoiler'>jw　　</span> 초보자 가이드 2.0",
+    title: "<span class='spoiler'>jw　　</span> 초보자 가이드 4.0",
     id: "jw",
     icon: "images/jw.svg",
     since_year: 2017,
     since_month: 1,
     since_date: 19,
-    url: "//<span class=\"spoiler\">jw.jinh.kr</span>/",
+    url: "//jw.jinh.kr/",
     description: "powered by team Cartel.",
     tag: ["web", "work"],
     theme: "424242"
@@ -158,7 +158,7 @@ let item_list = [{
     since_year: 2015,
     since_month: 12,
     since_date: 25,
-    url: "//www.instagram.com/user_no.02/",
+    url: "//www.instagram.com/user_no.04/",
     description: "You are what you eat.",
     tag: [""],
     theme: "C13584"
@@ -169,7 +169,7 @@ let item_list = [{
     since_year: 2020,
     since_month: 08,
     since_date: 15,
-    url: "//jw.jinh.kr/resume/",
+    url: "//tk.jinh.kr/resume/",
     description: "연락 기다립니다.",
     tag: ["web", "work", "art"],
     theme: "607d8b"
