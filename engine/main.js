@@ -86,7 +86,7 @@ let item_list = [{
     tag: ["web", "qualified"],
     theme: "#d32f2f"
   }, {
-    title: "#LOGE: 로또 번호 생성기",
+    title: "로또 번호 생성기",
     id: "lotto",
     icon: "images/looks_6-24px.svg",
     since_year: 2011,
