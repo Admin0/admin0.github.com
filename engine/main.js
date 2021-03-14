@@ -86,14 +86,14 @@ let item_list = [{
     tag: ["web", "qualified"],
     theme: "#d32f2f"
   }, {
-    title: "로또 번호 생성기",
+    title: "#LOGE: 로또 번호 생성기",
     id: "lotto",
     icon: "images/looks_6-24px.svg",
     since_year: 2011,
     since_month: 4,
     since_date: 29,
     url: "/lotto/",
-    description: "나눔로또6/45의 예상 추첨 번호를 스마트하게 생성합니다.",
+    description: "로또6/45의 예상 추첨 번호를 스마트하게 생성합니다.",
     tag: ["web", "game"],
     theme: "#ffb300"
   }, {
