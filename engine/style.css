@@ -251,7 +251,7 @@ img.margin0 {
   cursor: not-allowed;
 }
 
-@media handheld, only screen and (max-width:600px) {
+@media handheld, only screen and (max-width:1200px) {
   body {
     overflow-x: hidden;
   }
@@ -259,10 +259,21 @@ img.margin0 {
   section {
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   header, footer {
     position: static;
+  }
+
+  .item {
+    position: relative;
+    left: 0;
+    width: 316px;
+    margin: 1em;
   }
 
   .control {
@@ -270,12 +281,6 @@ img.margin0 {
     position: static;
     bottom: 1em;
     right: 1em;
-  }
-
-  .item {
-    position: relative;
-    left: calc(50% - 158px);
-    margin: 2em 0;
   }
 
   .card {
