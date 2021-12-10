@@ -1,4 +1,5 @@
-const is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); // mobile check
+// const is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); // mobile check
+let is_mobile = $(window).innerWidth() <= 1200 ? true : false;
 
 const is_ie = navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1); // ie check
 
@@ -385,4 +386,14 @@ if (!is_mobile) {
 
 $(window).on('load', function() {
   $("#splash").addClass("off");
+  // is_mobile = $(window).innerWidth() <= 1200 ? true : false;
+  if (is_mobile) {
+    $("body").addClass('mobile');
+  }
+  console.log('is_mobile: ' + is_mobile);
 });
+
+// $(window).on('resize', function() {
+//   is_mobile = $(window).innerWidth() <= 1200 ? true : false;
+//   console.log(is_mobile);
+// })

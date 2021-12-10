@@ -1,0 +1,48 @@
+body.mobile {
+  overflow-x: hidden;
+}
+
+body.mobile section {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+body.mobile header, body.mobile footer {
+  position: static;
+}
+
+body.mobile .item {
+  position: relative;
+  left: 0;
+  width: 316px;
+  margin: 1em;
+}
+
+body.mobile .control {
+  text-align: center;
+  position: static;
+  bottom: 1em;
+  right: 1em;
+}
+
+body.mobile .card {
+  transform: rotate(0);
+}
+
+body.mobile .info {
+  opacity: 0;
+}
+
+body.mobile .item.on .card,
+body.mobile .card:hover {
+  margin-top: 0;
+}
+
+body.mobile .item.on .info,
+body.mobile .card:hover .info {
+  opacity: 0;
+}
