@@ -288,3 +288,38 @@ div#splash .splash_title {
   font-weight: bold;
   color: #aaa;
 }
+
+/* ------------------------------------------------------------------- */
+/* ***** dark mode ***** */
+/* ------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: rgb(53, 54, 58);
+    color: rgba(232, 234, 237, 1);
+  }
+
+  div#splash {
+    background: rgb(53, 54, 58);
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Damion', cursive;
+    padding: 3em 0;
+    background: rgb(53, 54, 58, .75);
+    z-index: 2;
+  }
+
+  .info {
+    color: #ccc;
+  }
+
+  .control img {
+    filter: invert(100%);
+  }
+}
