@@ -13,6 +13,8 @@ body.mobile section {
   flex-wrap: wrap;
   justify-content: center;
   padding-bottom: calc(50vh - 100px);
+  perspective: 600px;
+  perspective-origin: 50% 25%;
 }
 
 body.mobile header,
@@ -26,8 +28,7 @@ body.mobile .item {
   bottom: 0;
   width: 316px;
   margin: 1em;
-  perspective: 3000px;
-  transform-origin: 50% 45%;
+  transform-origin: 50% 25%;
 }
 
 body.mobile .control {

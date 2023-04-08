@@ -5,20 +5,20 @@ const is_ie = navigator.appName == 'Microsoft Internet Explorer' || !!(navigator
 
 if (is_ie) location.replace('/v1/'); // if ie
 
-const IMG_ANDROID = "images/android-white-18dp.svg";
-const IMG_ANDROID_DARK = "images/android-black-18dp.svg";
-const IMG_WEB = "images/public-white-18dp.svg";
-const IMG_WEB_DARK = "images/public-black-18dp.svg";
-const IMG_WORK = "images/work-white-18dp.svg";
-const IMG_WORK_DARK = "images/work-black-18dp.svg";
-const IMG_LANG = "images/unicode-white.svg";
-const IMG_LANG_DARK = "images/unicode-black.svg";
-const IMG_ART = "images/palette-white-18dp.svg";
-const IMG_ART_DARK = "images/palette-black-18dp.svg";
-const IMG_GAME = "images/casino-white-18dp.svg";
-const IMG_GAME_DARK = "images/casino-black-18dp.svg";
-const IMG_QUALIFIED = "images/verified-white-18dp.svg";
-const IMG_QUALIFIED_DARK = "images/verified-black-18dp.svg";
+const IMG__ANDROID = "images/android-white-18dp.svg";
+const IMG__ANDROID_DARK = "images/android-black-18dp.svg";
+const IMG__WEB = "images/public-white-18dp.svg";
+const IMG__WEB_DARK = "images/public-black-18dp.svg";
+const IMG__WORK = "images/work-white-18dp.svg";
+const IMG__WORK_DARK = "images/work-black-18dp.svg";
+const IMG__LANG = "images/unicode-white.svg";
+const IMG__LANG_DARK = "images/unicode-black.svg";
+const IMG__ART = "images/palette-white-18dp.svg";
+const IMG__ART_DARK = "images/palette-black-18dp.svg";
+const IMG__GAME = "images/casino-white-18dp.svg";
+const IMG__GAME_DARK = "images/casino-black-18dp.svg";
+const IMG__QUALIFIED = "images/verified-white-18dp.svg";
+const IMG__QUALIFIED_DARK = "images/verified-black-18dp.svg";
 
 let item_list = [{
   title: "기만의 번역기 (모스 부호)",
@@ -67,7 +67,7 @@ let item_list = [{
 }, {
   title: "8-BIT Icon Theme",
   id: "bit",
-  icon: IMG_ANDROID,
+  icon: IMG__ANDROID,
   since_year: 2013,
   since_month: 8,
   since_date: 17,
@@ -208,7 +208,6 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
 
-
 function deg2rad(deg) {
   return deg * Math.PI / 180;
 }
@@ -297,13 +296,13 @@ function card_spread(data, key, type) {
 
     let tag =
       "<span class='tag'>" +
-      (data[i].tag.indexOf("web") != -1 ? "<img title='웹 앱' src='" + (is_light ? IMG_WEB_DARK : IMG_WEB) + "'>" : "") +
-      (data[i].tag.indexOf("android") != -1 ? "<img title='안드로이드 앱' src='" + (is_light ? IMG_ANDROID_DARK : IMG_ANDROID) + "'>" : "") +
-      (data[i].tag.indexOf("lang") != -1 ? "<img title='언어 / 문자 / 유니코드' src='" + (is_light ? IMG_LANG_DARK : IMG_LANG) + "'>" : "") +
-      (data[i].tag.indexOf("art") != -1 ? "<img title='예술' src='" + (is_light ? IMG_ART_DARK : IMG_ART) + "'>" : "") +
-      (data[i].tag.indexOf("game") != -1 ? "<img title='확률 / 주사위 굴림' src='" + (is_light ? IMG_GAME_DARK : IMG_GAME) + "'>" : "") +
-      (data[i].tag.indexOf("work") != -1 ? "<img title='업무' src='" + (is_light ? IMG_WORK_DARK : IMG_WORK) + "'>" : "") +
-      (data[i].tag.indexOf("qualified") != -1 ? "<img title='자기개발' src='" + (is_light ? IMG_QUALIFIED_DARK : IMG_QUALIFIED) + "'>" : "") +
+      (data[i].tag.indexOf("web") != -1 ? "<img title='웹 앱' src='" + (is_light ? IMG__WEB_DARK : IMG__WEB) + "'>" : "") +
+      (data[i].tag.indexOf("android") != -1 ? "<img title='안드로이드 앱' src='" + (is_light ? IMG__ANDROID_DARK : IMG__ANDROID) + "'>" : "") +
+      (data[i].tag.indexOf("lang") != -1 ? "<img title='언어 / 문자 / 유니코드' src='" + (is_light ? IMG__LANG_DARK : IMG__LANG) + "'>" : "") +
+      (data[i].tag.indexOf("art") != -1 ? "<img title='예술' src='" + (is_light ? IMG__ART_DARK : IMG__ART) + "'>" : "") +
+      (data[i].tag.indexOf("game") != -1 ? "<img title='확률 / 주사위 굴림' src='" + (is_light ? IMG__GAME_DARK : IMG__GAME) + "'>" : "") +
+      (data[i].tag.indexOf("work") != -1 ? "<img title='업무' src='" + (is_light ? IMG__WORK_DARK : IMG__WORK) + "'>" : "") +
+      (data[i].tag.indexOf("qualified") != -1 ? "<img title='자기개발' src='" + (is_light ? IMG__QUALIFIED_DARK : IMG__QUALIFIED) + "'>" : "") +
       "</span>"
     // + "<br><span class='itag'>" + tag(i) + "</span>"
 
@@ -311,12 +310,13 @@ function card_spread(data, key, type) {
   }
 
   if (!is_mobile) {
-    card_rotate(-window.pageYOffset / scroll_unit);
+    card_rotate.desktop(-window.pageYOffset / scroll_unit);
   } else {
+    // card_rotate.mobile(-window.pageYOffset / scroll_unit);
     $(".item").each(function () {
       let i = $(this).index();
       $(this).css({
-        "bottom": item_list.length - i - 8 + "em"
+        "bottom": -i + "em"
       });
     });
   };
@@ -327,76 +327,62 @@ let rotate_list = [];
 let rotate_unit = 15; //rotate origin
 let scroll_unit = 20;
 
-function card_rotate(val) {
-  let rotate_origin = window.innerWidth / 200; //rotate origin
-  $(".item").each(function () {
-    let i = $(this).index();
-    // let rotate = -3.75 + (i + .5) * rotate_unit / 2 + val;
-    let rotate = i * rotate_unit / 2 + val;
-    rotate_list[i] = Math.abs(rotate);
-    rotate = rotate < 45 ? rotate : rotate < -45 ? -45 : 45;
-    // let pos_x = Math.abs(Math.sin(deg2rad(rotate > -45 ? rotate : -45)) * card_width * rotate_origin);
-
-    function get_r(rotate) {
-      if (rotate - i < -30) { // left end
-        return -30 + i;
-      } else if (rotate - i > 31 - item_list.length) { // right end
-        return 31 + i - item_list.length;
-      } else {
-        return rotate;
-      }
-    }
-
-    $(this).css({
-      "transform": "rotate(" + get_r(rotate) + "deg)",
-      "transform-origin": "50% " + rotate_origin * 100 + "%"
-    });
-    // if (i == 9) console.log([
-    //   // $(this).parent().children().length,
-    //   i,
-    //   // window.innerWidth / 2,
-    //   $(this).offset().left,
-    //   get_r(rotate)
-    // ]);
-  });
-
-  let target = rotate_list.indexOf(Math.min.apply(null, rotate_list));
-  $('.item').removeClass("on");
-  $('.item:nth(' + target + ')').addClass("on");
-
-  $('body').height(window.innerHeight + (item_list.length - 1) * rotate_unit * scroll_unit / 2);
-  // console.log(11 * rotate_unit / 2 - window.pageYOffset / scroll_unit);
-}
-
-function card_stack(val) {
-  $(".item").each(function () {
-    let i = $(this).index();
-    let rotate = i * rotate_unit / 2 - val / scroll_unit;
-    if (($('section').height() - val) / 232 > item_list.length - i + 1) {
-      // rotate_list[i] = Math.abs(rotate);
-      // rotate = rotate < 45 ? rotate : rotate < -45 ? -45 : 45;
-
+let card_rotate = {
+  'desktop' : function(val){
+    let rotate_origin = window.innerWidth / 200; //rotate origin
+    $(".item").each(function () {
+      let i = $(this).index();
+      // let rotate = -3.75 + (i + .5) * rotate_unit / 2 + val;
+      let rotate = i * rotate_unit / 2 + val;
+      rotate_list[i] = Math.abs(rotate);
+      rotate = rotate < 45 ? rotate : rotate < -45 ? -45 : 45;
+      // let pos_x = Math.abs(Math.sin(deg2rad(rotate > -45 ? rotate : -45)) * card_width * rotate_origin);
+  
       function get_r(rotate) {
-        if (rotate > 60 + item_list.length) { // bottom end
-          return 60 + item_list.length;
+        if (rotate - i < -30) { // left end
+          return -30 + i;
+        } else if (rotate - i > 31 - item_list.length) { // right end
+          return 31 + i - item_list.length;
         } else {
           return rotate;
         }
       }
-
-      console.log([i, rotate, get_r(rotate), rotate - i > 60 - item_list.length]);
+  
       $(this).css({
-        "transform": "perspective(500px) rotateX(" + -get_r(rotate) + "deg)",
-        // "background":"red"
+        "transform": "rotate(" + get_r(rotate) + "deg)",
+        "transform-origin": "50% " + rotate_origin * 100 + "%"
       });
-    } else {
+      // if (i == 9) console.log([
+      //   // $(this).parent().children().length,
+      //   i,
+      //   // window.innerWidth / 2,
+      //   $(this).offset().left,
+      //   get_r(rotate)
+      // ]);
+    });
+  
+    let target = rotate_list.indexOf(Math.min.apply(null, rotate_list));
+    $('.item').removeClass("on");
+    $('.item:nth(' + target + ')').addClass("on");
+  
+    $('body').height(window.innerHeight + (item_list.length - 1) * rotate_unit * scroll_unit / 2);
+    // console.log(11 * rotate_unit / 2 - window.pageYOffset / scroll_unit);
+  },
 
-      $(this).css({
-        "transform": "rotateX(0deg)",
-        // "background":"silver"
-      });
-    }
-  });
+  'mobile': function(val){
+    $(".item").each(function () {
+      let i = $(this).index();
+      let rotate = i * rotate_unit / 2 - val / scroll_unit;
+      rotate = rotate > 45 ? 45 : rotate < 0 ? 0 : rotate;
+
+        if (i == 13) console.log([i, item_list[i].id, "rotate: "+Math.round(rotate, 0)]);
+        
+        $(this).css({
+          "transform": "rotateX(" + -rotate + "deg)"
+          // "transform": "perspective(1000px) rotateX(" + -rotate + "deg)"
+        });
+    });
+  }
 }
 
 card_spread(item_list, "hue");
@@ -404,11 +390,11 @@ card_spread(item_list, "hue");
 if (!is_mobile) {
 
   window.addEventListener('scroll', _.throttle(function () {
-    card_rotate(-window.pageYOffset / scroll_unit);
+    card_rotate.desktop(-window.pageYOffset / scroll_unit);
   }, 100));
 
   window.addEventListener('resize', _.throttle(function () {
-    card_rotate(-window.pageYOffset / scroll_unit);
+    card_rotate.desktop(-window.pageYOffset / scroll_unit);
   }, 100));
 
   // $(document).ready(function() {
@@ -424,12 +410,12 @@ if (!is_mobile) {
   });
 } else {
   window.addEventListener('scroll', _.throttle(function () {
-    card_stack(window.pageYOffset);
+    card_rotate.mobile(window.pageYOffset);
   }, 100));
   $(window).on('load', function () {
     setTimeout(function () {
-      card_stack(window.pageYOffset);
-    }, 500);
+      card_rotate.mobile(window.pageYOffset);
+    }, 0);
   });
 }
 
