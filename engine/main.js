@@ -316,7 +316,7 @@ function card_spread(data, key, type) {
     $(".item").each(function () {
       let i = $(this).index();
       $(this).css({
-        "bottom": -i + "em"
+        // "bottom": 2 -i*i/item_list.length + "em"
       });
     });
   };
@@ -371,16 +371,20 @@ let card_rotate = {
 
   'mobile': function(val){
     $(".item").each(function () {
+      let COLUMNS = Math.floor(window.innerWidth / (316 + 16*2));
+      let POSITION_SCROLL_0to1 = (window.pageYOffset + window.innerHeight) / $(document).height()
       let i = $(this).index();
+      i = (i - i%COLUMNS)/COLUMNS; //  for multi-columns ex) 1, 2, 3, 4 --> 1, 1, 2, 2 @2columns
       let rotate = i * rotate_unit / 2 - val / scroll_unit;
-      rotate = rotate > 45 ? 45 : rotate < 0 ? 0 : rotate;
+      rotate = rotate > 60 ? 60 : rotate < 0 ? 0 : rotate;
 
-        if (i == 13) console.log([i, item_list[i].id, "rotate: "+Math.round(rotate, 0)]);
+      // console.log([i, i%COLUMNS,  rotate]); 
+      // if (i == 13) console.log([i, item_list[i].id, "rotate: "+Math.round(rotate, 0)]);
         
-        $(this).css({
-          "transform": "rotateX(" + -rotate + "deg)"
-          // "transform": "perspective(1000px) rotateX(" + -rotate + "deg)"
-        });
+      $(this).css({
+        "bottom": (-i*i/(item_list.length) * (1-POSITION_SCROLL_0to1)) - COLUMNS*2 + "em",
+        "transform": "perspective(" + (50 -i) + "em) rotateX(" + -rotate + "deg)"
+      });
     });
   }
 }
@@ -412,6 +416,11 @@ if (!is_mobile) {
   window.addEventListener('scroll', _.throttle(function () {
     card_rotate.mobile(window.pageYOffset);
   }, 100));
+
+  window.addEventListener('resize', _.throttle(function () {
+    card_rotate.mobile(window.pageYOffset);
+  }, 100));
+
   $(window).on('load', function () {
     setTimeout(function () {
       card_rotate.mobile(window.pageYOffset);
