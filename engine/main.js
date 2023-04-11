@@ -19,6 +19,9 @@ const IMG__GAME = "images/casino-white-18dp.svg";
 const IMG__GAME_DARK = "images/casino-black-18dp.svg";
 const IMG__QUALIFIED = "images/verified-white-18dp.svg";
 const IMG__QUALIFIED_DARK = "images/verified-black-18dp.svg";
+const IMG__LIBRARY_ADD = "images/library_add-white.svg";
+const IMG__LIBRARY_ADD_DARK = "images/library_add-black.svg";
+
 
 let item_list = [{
   title: "기만의 번역기 (모스 부호)",
@@ -204,8 +207,7 @@ let item_list = [{
   // },
 ];
 
-const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
 ];
 
 function deg2rad(deg) {
@@ -263,10 +265,8 @@ for (var i = 0; i < item_list.length; i++) {
   item_list[i].lightness = hsl[2];
 }
 
-function card_spread(data, key, type) {
-  if (type == undefined) {
-    type = "asc";
-  }
+function sort(data, key, type) {
+  if (type == undefined) type = "asc";
   data.sort(function (a, b) {
     var x = a[key];
     var y = b[key];
@@ -276,49 +276,60 @@ function card_spread(data, key, type) {
       return x < y ? -1 : x > y ? 1 : 0;
     }
   });
+}
 
-  $(".item").remove();
+sort(item_list, "hue")
+
+function card_spread(data, key, type) {
+
+  if ($("section > .item")[item_list.length - 1] != undefined) {$(".item").remove(); sort(data, key, type);}
 
   for (var i = 0; i < data.length; i++) {
-    let year = data[i].since_year.toString().substring(2, 4);
-    let month = (data[i].since_month.toString().length == 1) ? "0" + data[i].since_month : data[i].since_month;
-    let is_light = data[i].lightness >= 70;
-    // function tag(i) {
-    //   let tag = "";
-    //   for (var j = 0; j < item_list[i].tag.length; j++) {
-    //     tag += "#" + item_list[i].tag[j] + " ";
-    //   }
-    //   return tag;
-    // }
-    let info = "<span class='ititle'>" + data[i].title + "</span><br>" +
-      "<span class='idate'>" + monthNames[data[i].since_month - 1] /*.substring(0, 3).toUpperCase()*/ + "-" + data[i].since_year + "</span><br>" +
-      "<span class='idescription'>" + data[i].description + "</span>"
+    if ($("section > .item")[i] == undefined) {
 
-    let tag =
-      "<span class='tag'>" +
-      (data[i].tag.indexOf("web") != -1 ? "<img title='웹 앱' src='" + (is_light ? IMG__WEB_DARK : IMG__WEB) + "'>" : "") +
-      (data[i].tag.indexOf("android") != -1 ? "<img title='안드로이드 앱' src='" + (is_light ? IMG__ANDROID_DARK : IMG__ANDROID) + "'>" : "") +
-      (data[i].tag.indexOf("lang") != -1 ? "<img title='언어 / 문자 / 유니코드' src='" + (is_light ? IMG__LANG_DARK : IMG__LANG) + "'>" : "") +
-      (data[i].tag.indexOf("art") != -1 ? "<img title='예술' src='" + (is_light ? IMG__ART_DARK : IMG__ART) + "'>" : "") +
-      (data[i].tag.indexOf("game") != -1 ? "<img title='확률 / 주사위 굴림' src='" + (is_light ? IMG__GAME_DARK : IMG__GAME) + "'>" : "") +
-      (data[i].tag.indexOf("work") != -1 ? "<img title='업무' src='" + (is_light ? IMG__WORK_DARK : IMG__WORK) + "'>" : "") +
-      (data[i].tag.indexOf("qualified") != -1 ? "<img title='자기개발' src='" + (is_light ? IMG__QUALIFIED_DARK : IMG__QUALIFIED) + "'>" : "") +
-      "</span>"
-    // + "<br><span class='itag'>" + tag(i) + "</span>"
+      let year = data[i].since_year.toString().substring(2, 4);
+      let month = (data[i].since_month.toString().length == 1) ? "0" + data[i].since_month : data[i].since_month;
+      let is_light = data[i].lightness >= 70;
+      // function tag(i) {
+      //   let tag = "";
+      //   for (var j = 0; j < item_list[i].tag.length; j++) {
+      //     tag += "#" + item_list[i].tag[j] + " ";
+      //   }
+      //   return tag;
+      // }
+      let info = "<span class='ititle'>" + data[i].title + "</span><br>" +
+        "<span class='idate'>" + monthNames[data[i].since_month - 1] /*.substring(0, 3).toUpperCase()*/ + "-" + data[i].since_year + "</span><br>" +
+        "<span class='idescription'>" + data[i].description + "</span>"
 
-    $("section").append("<div class='item " + data[i].id + "'><a href='" + data[i].url + "' class='card " + (is_light ? "light" : "") + "' style='background:" + data[i].theme + "'><img class='icon' src='" + data[i].icon + "'><span class='title'>" + data[i].title.toUpperCase() + "</span><span class='date'>" + month + "/" + year + "</span><span class='url'>" + data[i].url.toUpperCase() + "</span><div class='info'>" + info + "</div>" + tag + (data[i].html != undefined ? "<div class='html'>" + data[i].html + "</div>" : "") + "</a></div>");
+      let tag =
+        "<span class='tag'>" +
+        (data[i].tag.indexOf("web") != -1 ? "<img title='웹 앱' src='" + (is_light ? IMG__WEB_DARK : IMG__WEB) + "'>" : "") +
+        (data[i].tag.indexOf("android") != -1 ? "<img title='안드로이드 앱' src='" + (is_light ? IMG__ANDROID_DARK : IMG__ANDROID) + "'>" : "") +
+        (data[i].tag.indexOf("lang") != -1 ? "<img title='언어 / 문자 / 유니코드' src='" + (is_light ? IMG__LANG_DARK : IMG__LANG) + "'>" : "") +
+        (data[i].tag.indexOf("art") != -1 ? "<img title='예술' src='" + (is_light ? IMG__ART_DARK : IMG__ART) + "'>" : "") +
+        (data[i].tag.indexOf("game") != -1 ? "<img title='확률 / 주사위 굴림' src='" + (is_light ? IMG__GAME_DARK : IMG__GAME) + "'>" : "") +
+        (data[i].tag.indexOf("work") != -1 ? "<img title='업무' src='" + (is_light ? IMG__WORK_DARK : IMG__WORK) + "'>" : "") +
+        (data[i].tag.indexOf("qualified") != -1 ? "<img title='자기개발' src='" + (is_light ? IMG__QUALIFIED_DARK : IMG__QUALIFIED) + "'>" : "") +
+        "</span>"
+      // + "<br><span class='itag'>" + tag(i) + "</span>"
+
+      $("section").append(
+        `<div class='item ${data[i].id}'>
+          <a href='${data[i].url}' class='card ${(is_light ? "light" : "")}' style='background:${data[i].theme}'>
+            <img class='icon' src='${data[i].icon}'>
+              <span class='title'>${data[i].title.toUpperCase()}</span>
+              <span class='date'>${month}/${year}</span>
+              <span class='url'>${data[i].url.toUpperCase()}</span>
+              <div class='info'>${info}</div>${tag}${(data[i].html != undefined ? `"<div class='html'>${data[i].html}</div>"` : "")}</a></div>`);
+    } else {
+      // console.log(`${$("section > .item")[i].name} is already defined`);
+    }
   }
 
   if (!is_mobile) {
     card_rotate.desktop(-window.pageYOffset / scroll_unit);
   } else {
-    // card_rotate.mobile(-window.pageYOffset / scroll_unit);
-    $(".item").each(function () {
-      let i = $(this).index();
-      $(this).css({
-        // "bottom": 2 -i*i/item_list.length + "em"
-      });
-    });
+    card_rotate.mobile(window.pageYOffset);
   };
 }
 
@@ -328,7 +339,7 @@ let rotate_unit = 15; //rotate origin
 let scroll_unit = 20;
 
 let card_rotate = {
-  'desktop' : function(val){
+  'desktop': function (val) {
     let rotate_origin = window.innerWidth / 200; //rotate origin
     $(".item").each(function () {
       let i = $(this).index();
@@ -337,7 +348,7 @@ let card_rotate = {
       rotate_list[i] = Math.abs(rotate);
       rotate = rotate < 45 ? rotate : rotate < -45 ? -45 : 45;
       // let pos_x = Math.abs(Math.sin(deg2rad(rotate > -45 ? rotate : -45)) * card_width * rotate_origin);
-  
+
       function get_r(rotate) {
         if (rotate - i < -30) { // left end
           return -30 + i;
@@ -347,7 +358,7 @@ let card_rotate = {
           return rotate;
         }
       }
-  
+
       $(this).css({
         "transform": "rotate(" + get_r(rotate) + "deg)",
         "transform-origin": "50% " + rotate_origin * 100 + "%"
@@ -360,30 +371,30 @@ let card_rotate = {
       //   get_r(rotate)
       // ]);
     });
-  
+
     let target = rotate_list.indexOf(Math.min.apply(null, rotate_list));
     $('.item').removeClass("on");
     $('.item:nth(' + target + ')').addClass("on");
-  
+
     $('body').height(window.innerHeight + (item_list.length - 1) * rotate_unit * scroll_unit / 2);
     // console.log(11 * rotate_unit / 2 - window.pageYOffset / scroll_unit);
   },
 
-  'mobile': function(val){
+  'mobile': function (val) {
     $(".item").each(function () {
-      let COLUMNS = Math.floor(window.innerWidth / (316 + 16*2));
+      let COLUMNS = Math.floor(window.innerWidth / (316 + 16 * 2));
       let POSITION_SCROLL_0to1 = (window.pageYOffset + window.innerHeight) / $(document).height()
       let i = $(this).index();
-      i = (i - i%COLUMNS)/COLUMNS; //  for multi-columns ex) 1, 2, 3, 4 --> 1, 1, 2, 2 @2columns
+      i = (i - i % COLUMNS) / COLUMNS; //  for multi-columns ex) 1, 2, 3, 4 --> 1, 1, 2, 2 @2columns
       let rotate = i * rotate_unit / 2 - val / scroll_unit;
       rotate = rotate > 60 ? 60 : rotate < 0 ? 0 : rotate;
 
       // console.log([i, i%COLUMNS,  rotate]); 
       // if (i == 13) console.log([i, item_list[i].id, "rotate: "+Math.round(rotate, 0)]);
-        
+
       $(this).css({
-        "bottom": (-i*i/(item_list.length) * (1-POSITION_SCROLL_0to1)) - COLUMNS*2 + "em",
-        "transform": "perspective(" + (50 -i) + "em) rotateX(" + -rotate + "deg)"
+        "bottom": (-i * i / (item_list.length) * (1 - POSITION_SCROLL_0to1)) - (COLUMNS * 2) + "em",
+        "transform": "perspective(" + (50 - i) + "em) rotateX(" + -rotate + "deg)"
       });
     });
   }
@@ -426,6 +437,28 @@ if (!is_mobile) {
       card_rotate.mobile(window.pageYOffset);
     }, 0);
   });
+}
+
+function card_add(num) {
+  for (let i = 0; i < num; i++) {
+    let theme_temp = (Math.random() * 0xFFFFFF << 0).toString(16);
+    item_list.push({
+      title: `#${theme_temp}`,
+      id: "",
+      icon: "images/trans2.png",
+      since_year: new Date().getFullYear(),
+      since_month: new Date().getMonth() + 1,
+      since_date: new Date().getDate(),
+      url: "",
+      description: "All right, so listen. Why don't you give me a call when you wanna take things a little more seriously. Here's my card.",
+      tag: [],
+      theme: `#${theme_temp}`,
+      hue: hex2hsl(theme_temp)[1] == 0 ? 360 + hex2hsl(theme_temp)[2] : hex2hsl(theme_temp)[0],
+      lightness: hex2hsl(theme_temp)[2]
+    });
+    // console.log(item_list[item_list.length-1]);
+  }
+  card_spread(item_list, "hue");
 }
 
 $(window).on('load', function () {
