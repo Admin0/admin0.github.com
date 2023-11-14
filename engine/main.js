@@ -20,7 +20,7 @@ const IMG__GAME_DARK = "images/casino-black-18dp.svg";
 const IMG__QUALIFIED = "images/verified-white-18dp.svg";
 const IMG__QUALIFIED_DARK = "images/verified-black-18dp.svg";
 const IMG__LIBRARY_ADD = "images/library_add-white.svg";
-const IMG__LIBRARY_ADD_DARK = "images/library_add-black.svg";
+    const IMG__LIBRARY_ADD_DARK = "images/library_add-black.svg";
 
 
 let item_list = [{
@@ -162,7 +162,7 @@ let item_list = [{
   since_year: 2015,
   since_month: 12,
   since_date: 25,
-  url: "//www.instagram.com/user_no.04/",
+  url: "//www.instagram.com/enf_unity/",
   description: "You are what you eat.",
   tag: [""],
   theme: "#C13584"
@@ -171,7 +171,7 @@ let item_list = [{
   id: "resume",
   icon: "images/work-white-18dp.svg",
   since_year: 2020,
-  since_month: 08,
+  since_month: 8,
   since_date: 15,
   url: "//tk.jinh.kr/resume/",
   description: "연락 기다립니다.",
@@ -282,7 +282,7 @@ sort(item_list, "hue")
 
 function card_spread(data, key, type) {
 
-  if ($("section > .item")[item_list.length - 1] != undefined) {$(".item").remove(); sort(data, key, type);}
+  if ($("section > .item")[item_list.length - 1] != undefined) { $(".item").remove(); sort(data, key, type); }
 
   for (var i = 0; i < data.length; i++) {
     if ($("section > .item")[i] == undefined) {
