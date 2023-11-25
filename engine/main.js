@@ -1,3 +1,4 @@
+
 // const is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); // mobile check
 let is_mobile = $(window).innerWidth() <= 1200 ? true : false;
 
@@ -20,7 +21,7 @@ const IMG__GAME_DARK = "images/casino-black-18dp.svg";
 const IMG__QUALIFIED = "images/verified-white-18dp.svg";
 const IMG__QUALIFIED_DARK = "images/verified-black-18dp.svg";
 const IMG__LIBRARY_ADD = "images/library_add-white.svg";
-    const IMG__LIBRARY_ADD_DARK = "images/library_add-black.svg";
+const IMG__LIBRARY_ADD_DARK = "images/library_add-black.svg";
 
 
 let item_list = [{
@@ -177,7 +178,18 @@ let item_list = [{
   description: "연락 기다립니다.",
   tag: ["web", "work", "art"],
   theme: "#607d8b"
-},
+}, {
+  title: "퇴근 시간을 알려주는 고양이",
+  id: "owo",
+  icon: "images/cat.svg",
+  since_year: 2023,
+  since_month: 11,
+  since_date: 25,
+  url: "/owo/",
+  description: "집에 가고싶다 증후군: 강력한 귀소 본능을 느낌 (심한 경우 집에서도 환상통을 겪음)",
+  tag: ["web", "work"],
+  theme: "#2e6cb8"
+}
 
   // {
   //   title: "<span class='spoiler'>재원산업</span>주식회사",

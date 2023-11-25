@@ -49,9 +49,18 @@
 .jw {
   background: #424242;
 } */
+
+.SAT_kr .card {
+  background: linear-gradient(90deg, rgba(244, 67, 54, 1) 0%, rgba(194, 24, 91, 1) 80%, rgba(156, 39, 176, 1) 100%) !important;
+  /* background: linear-gradient(90deg, rgba(183, 28, 28, 1) 0%, rgba(211, 47, 47, 1) 80%, rgba(244, 67, 54, 1) 100%) !important; */
+}
+
 .instagram .card {
-  background: #d6249f !important;
   background: radial-gradient(circle at 10% 90%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+}
+
+.owo .card {
+  background: linear-gradient(to right, rgba(238, 174, 202, 1) 0%, rgb(148, 188, 233) 50%) !important;
 }
 
 /*******************
