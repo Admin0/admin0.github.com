@@ -174,7 +174,7 @@ let item_list = [{
   since_year: 2020,
   since_month: 8,
   since_date: 15,
-  url: "//tk.jinh.kr/resume/",
+  url: "//jinh.kr/resume/",
   description: "연락 기다립니다.",
   tag: ["web", "work", "art"],
   theme: "#607d8b"
