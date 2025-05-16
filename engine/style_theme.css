@@ -63,6 +63,10 @@
   background: linear-gradient(to right, rgba(238, 174, 202, 1) 0%, rgb(148, 188, 233) 50%) !important;
 }
 
+.cocktail .card {
+  background: linear-gradient(to right, #35e5a0 0%, #35aae1 80%, #367aff 100%) !important;
+}
+
 /*******************
  *     JW CARD     *
  *******************/

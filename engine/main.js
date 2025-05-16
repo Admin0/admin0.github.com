@@ -22,6 +22,8 @@ const IMG__QUALIFIED = "images/verified-white-18dp.svg";
 const IMG__QUALIFIED_DARK = "images/verified-black-18dp.svg";
 const IMG__LIBRARY_ADD = "images/library_add-white.svg";
 const IMG__LIBRARY_ADD_DARK = "images/library_add-black.svg";
+const IMG__COCKTAIL = "images/local_bar_24dp_FFFFFF_FILL1_wght400_GRAD0_opsz24.svg";
+const IMG__COCKTAIL_DARK = "images/local_bar_24dp_000000_FILL1_wght400_GRAD0_opsz24.svg";
 
 
 let item_list = [{
@@ -165,7 +167,7 @@ let item_list = [{
   since_date: 25,
   url: "//www.instagram.com/enf_unity/",
   description: "You are what you eat.",
-  tag: [""],
+  tag: ["alcohol"],
   theme: "#C13584"
 }, {
   title: "#resume",
@@ -189,6 +191,17 @@ let item_list = [{
   description: "집에 가고싶다 증후군: 강력한 귀소 본능을 느낌 (심한 경우 집에서도 환상통을 겪음)",
   tag: ["web", "work"],
   theme: "#2e6cb8"
+}, {
+  title: "프로젝트: 디오니소스스",
+  id: "cocktail",
+  icon: IMG__COCKTAIL,
+  since_year: 2025,
+  since_month: 5,
+  since_date: 15,
+  url: "/qualify/조주기능사/",
+  description: "조주기능사 국가기술자격 실기시험문제: 칵테일 과제",
+  tag: ["web", "qualified", "alcohol"],
+  theme: "#35E5A0"
 }
 
   // {
@@ -322,6 +335,7 @@ function card_spread(data, key, type) {
         (data[i].tag.indexOf("game") != -1 ? "<img title='확률 / 주사위 굴림' src='" + (is_light ? IMG__GAME_DARK : IMG__GAME) + "'>" : "") +
         (data[i].tag.indexOf("work") != -1 ? "<img title='업무' src='" + (is_light ? IMG__WORK_DARK : IMG__WORK) + "'>" : "") +
         (data[i].tag.indexOf("qualified") != -1 ? "<img title='자기개발' src='" + (is_light ? IMG__QUALIFIED_DARK : IMG__QUALIFIED) + "'>" : "") +
+        (data[i].tag.indexOf("alcohol") != -1 ? "<img title='한잔해' src='" + (is_light ? IMG__COCKTAIL_DARK : IMG__COCKTAIL) + "'>" : "") +
         "</span>"
       // + "<br><span class='itag'>" + tag(i) + "</span>"
 
