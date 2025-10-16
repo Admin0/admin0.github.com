@@ -24,6 +24,10 @@ const IMG__LIBRARY_ADD = "images/library_add-white.svg";
 const IMG__LIBRARY_ADD_DARK = "images/library_add-black.svg";
 const IMG__COCKTAIL = "images/local_bar_24dp_FFFFFF_FILL1_wght400_GRAD0_opsz24.svg";
 const IMG__COCKTAIL_DARK = "images/local_bar_24dp_000000_FILL1_wght400_GRAD0_opsz24.svg";
+const IMG__MOUNTAIN = "images/mountain_flag_24dp_FFFFFF.svg";
+const IMG__MOUNTAIN_DARK = "images/mountain_flag_24dp_000000.svg";
+const IMG__FITNESS = "images/favorite_24dp_FFFFFF.svg";
+const IMG__FITNESS_DARK = "images/favorite_24dp_000000.svg";
 
 
 let item_list = [{
@@ -202,6 +206,17 @@ let item_list = [{
   description: "조주기능사 국가기술자격 실기시험문제: 칵테일 과제",
   tag: ["web", "qualified", "alcohol"],
   theme: "#35E5A0"
+}, {
+  title: "블랙야크",
+  id: "blackyak",
+  icon: IMG__MOUNTAIN,
+  since_year: 2025,
+  since_month: 10,
+  since_date: 10,
+  url: "/bucket/블랙야크/",
+  description: "조주기능사 국가기술자격 실기시험문제: 칵테일 과제",
+  tag: ["web", "qualified", "fitness"],
+  theme: "#00897B"
 }
 
   // {
@@ -336,6 +351,7 @@ function card_spread(data, key, type) {
         (data[i].tag.indexOf("work") != -1 ? "<img title='업무' src='" + (is_light ? IMG__WORK_DARK : IMG__WORK) + "'>" : "") +
         (data[i].tag.indexOf("qualified") != -1 ? "<img title='자기개발' src='" + (is_light ? IMG__QUALIFIED_DARK : IMG__QUALIFIED) + "'>" : "") +
         (data[i].tag.indexOf("alcohol") != -1 ? "<img title='한잔해' src='" + (is_light ? IMG__COCKTAIL_DARK : IMG__COCKTAIL) + "'>" : "") +
+        (data[i].tag.indexOf("fitness") != -1 ? "<img title='피트니스' src='" + (is_light ? IMG__FITNESS_DARK : IMG__FITNESS) + "'>" : "") +
         "</span>"
       // + "<br><span class='itag'>" + tag(i) + "</span>"
 
