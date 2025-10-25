@@ -129,29 +129,32 @@ let item_list = [{
   description: "담신믄 네모네모 멈뭄미뫄 눈미 마주치고 말맜습니다. 담신믄 미제 네모네모 멈뭄미믜 저주로 돔그란 글자를 칠 수 멊습니다. 멈멈!",
   tag: ["web", "lang"],
   theme: "#009688"
-}, {
-  title: "<span class='spoiler'>jw　　</span> 초보자 가이드 4.0",
-  id: "jw",
-  icon: "images/jw.svg",
-  since_year: 2017,
-  since_month: 1,
-  since_date: 19,
-  url: "//jw.jinh.kr/",
-  description: "powered by team Cartel.",
-  tag: ["web", "work"],
-  theme: "#424242"
-}, {
-  title: "Sample",
-  id: "blog",
-  icon: "images/rss_feed-white-18dp.svg",
-  since_year: 2007,
-  since_month: 3,
-  since_date: 21,
-  url: "//blog.jinh.kr/",
-  description: "본격 변방 블로그.",
-  tag: ["web"],
-  theme: "#212121"
-}, {
+},
+// {
+//   title: "<span class='spoiler'>jw　　</span> 초보자 가이드 4.0",
+//   id: "jw",
+//   icon: "images/jw.svg",
+//   since_year: 2017,
+//   since_month: 1,
+//   since_date: 19,
+//   url: "//jw.jinh.kr/",
+//   description: "powered by team Cartel.",
+//   tag: ["web", "work"],
+//   theme: "#424242"
+// },
+// {
+//   title: "Sample",
+//   id: "blog",
+//   icon: "images/rss_feed-white-18dp.svg",
+//   since_year: 2007,
+//   since_month: 3,
+//   since_date: 21,
+//   url: "//blog.jinh.kr/",
+//   description: "본격 변방 블로그.",
+//   tag: ["web"],
+//   theme: "#212121"
+// }, 
+{
   title: "버킷 리스트",
   id: "bucket",
   icon: "images/playlist_add_check-24px.svg",
@@ -174,7 +177,7 @@ let item_list = [{
   tag: ["alcohol"],
   theme: "#C13584"
 }, {
-  title: "#resume",
+  title: "이력서",
   id: "resume",
   icon: "images/work-white-18dp.svg",
   since_year: 2020,
@@ -196,7 +199,7 @@ let item_list = [{
   tag: ["web", "work"],
   theme: "#2e6cb8"
 }, {
-  title: "프로젝트: 디오니소스스",
+  title: "디오니소스 프로젝트",
   id: "cocktail",
   icon: IMG__COCKTAIL,
   since_year: 2025,
@@ -214,9 +217,9 @@ let item_list = [{
   since_month: 10,
   since_date: 10,
   url: "/bucket/블랙야크/",
-  description: "조주기능사 국가기술자격 실기시험문제: 칵테일 과제",
+  description: "블랙야크 제품은 비싸도 좀 봐준다.",
   tag: ["web", "qualified", "fitness"],
-  theme: "#00897B"
+  theme: "#e60019"
 }
 
   // {
