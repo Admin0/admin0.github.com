@@ -188,6 +188,11 @@ section {
   margin-left: 6px;
 }
 
+.card .icon.dark,
+.card .tag img.dark {
+filter: invert(1);
+}
+
 .info {
   color: #777;
   position: absolute;

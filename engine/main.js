@@ -2,38 +2,10 @@
 // const is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); // mobile check
 let is_mobile = $(window).innerWidth() <= 1200 ? true : false;
 
-const is_ie = navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1); // ie check
-
-if (is_ie) location.replace('/v1/'); // if ie
-
-const IMG__ANDROID = "images/android-white-18dp.svg";
-const IMG__ANDROID_DARK = "images/android-black-18dp.svg";
-const IMG__WEB = "images/public-white-18dp.svg";
-const IMG__WEB_DARK = "images/public-black-18dp.svg";
-const IMG__WORK = "images/work-white-18dp.svg";
-const IMG__WORK_DARK = "images/work-black-18dp.svg";
-const IMG__LANG = "images/unicode-white.svg";
-const IMG__LANG_DARK = "images/unicode-black.svg";
-const IMG__ART = "images/palette-white-18dp.svg";
-const IMG__ART_DARK = "images/palette-black-18dp.svg";
-const IMG__GAME = "images/casino-white-18dp.svg";
-const IMG__GAME_DARK = "images/casino-black-18dp.svg";
-const IMG__QUALIFIED = "images/verified-white-18dp.svg";
-const IMG__QUALIFIED_DARK = "images/verified-black-18dp.svg";
-const IMG__LIBRARY_ADD = "images/library_add-white.svg";
-const IMG__LIBRARY_ADD_DARK = "images/library_add-black.svg";
-const IMG__COCKTAIL = "images/local_bar_24dp_FFFFFF_FILL1_wght400_GRAD0_opsz24.svg";
-const IMG__COCKTAIL_DARK = "images/local_bar_24dp_000000_FILL1_wght400_GRAD0_opsz24.svg";
-const IMG__MOUNTAIN = "images/mountain_flag_24dp_FFFFFF.svg";
-const IMG__MOUNTAIN_DARK = "images/mountain_flag_24dp_000000.svg";
-const IMG__FITNESS = "images/favorite_24dp_FFFFFF.svg";
-const IMG__FITNESS_DARK = "images/favorite_24dp_000000.svg";
-
-
 let item_list = [{
   title: "기만의 번역기 (모스 부호)",
   id: "morse",
-  icon: "images/morse.svg",
+  icon: "images/app__morse.svg",
   since_year: "2013",
   since_month: "01",
   since_date: "19",
@@ -44,7 +16,7 @@ let item_list = [{
 }, {
   title: "기만의 번역기 (점자)",
   id: "braille",
-  icon: "images/braille.svg",
+  icon: "images/app__braille.svg",
   since_year: "2019",
   since_month: "12",
   since_date: "06",
@@ -55,7 +27,7 @@ let item_list = [{
 }, {
   title: "#qualify",
   id: "qualify",
-  icon: "images/grade-24px.svg",
+  icon: "images/icon__grade.svg",
   since_year: "2018",
   since_month: "09",
   since_date: "29",
@@ -66,7 +38,7 @@ let item_list = [{
 }, {
   title: "기만의 모스 부호",
   id: "morse_android",
-  icon: "images/morse.svg",
+  icon: "images/app__morse.svg",
   since_year: 2013,
   since_month: 2,
   since_date: 28,
@@ -77,7 +49,7 @@ let item_list = [{
 }, {
   title: "8-BIT Icon Theme",
   id: "bit",
-  icon: IMG__ANDROID,
+  icon: "images/icon__android.svg",
   since_year: 2013,
   since_month: 8,
   since_date: 17,
@@ -88,7 +60,7 @@ let item_list = [{
 }, {
   title: "대학수학능력시험 카운터",
   id: "SAT_kr",
-  icon: "images/timer-white-18dp.svg",
+  icon: "images/app__satkr.svg",
   since_year: 2008,
   since_month: 11,
   since_date: 13,
@@ -99,7 +71,7 @@ let item_list = [{
 }, {
   title: "로또 번호 생성기",
   id: "lotto",
-  icon: "images/looks_6-24px.svg",
+  icon: "images/icon__counter_6.svg",
   since_year: 2011,
   since_month: 4,
   since_date: 29,
@@ -110,7 +82,7 @@ let item_list = [{
 }, {
   title: "전투 시뮬레이터",
   id: "battle",
-  icon: "images/sports_kabaddi-white-18dp.svg",
+  icon: "images/icon__swords.svg",
   since_year: 2009,
   since_month: 1,
   since_date: 3,
@@ -121,7 +93,7 @@ let item_list = [{
 }, {
   title: "네모네모 멈뭄미믜 저주가 걸린 글",
   id: "mmm",
-  icon: "images/pets-white-18dp.svg",
+  icon: "images/icon__pets.svg",
   since_year: 2016,
   since_month: 6,
   since_date: 19,
@@ -157,7 +129,7 @@ let item_list = [{
 {
   title: "버킷 리스트",
   id: "bucket",
-  icon: "images/playlist_add_check-24px.svg",
+  icon: "images/app__bucket.svg",
   since_year: 2014,
   since_month: 10,
   since_date: 3,
@@ -168,7 +140,7 @@ let item_list = [{
 }, {
   title: "Instagram",
   id: "instagram",
-  icon: "images/Instagram_simple_icon.svg",
+  icon: "images/app__instagram.svg",
   since_year: 2015,
   since_month: 12,
   since_date: 25,
@@ -179,7 +151,7 @@ let item_list = [{
 }, {
   title: "이력서",
   id: "resume",
-  icon: "images/work-white-18dp.svg",
+  icon: "images/icon__work.svg",
   since_year: 2020,
   since_month: 8,
   since_date: 15,
@@ -190,7 +162,7 @@ let item_list = [{
 }, {
   title: "퇴근 시간을 알려주는 고양이",
   id: "owo",
-  icon: "images/cat.svg",
+  icon: "images/icon__cat.svg",
   since_year: 2023,
   since_month: 11,
   since_date: 25,
@@ -201,7 +173,7 @@ let item_list = [{
 }, {
   title: "디오니소스 프로젝트",
   id: "cocktail",
-  icon: IMG__COCKTAIL,
+  icon: "images/icon__cocktail.svg",
   since_year: 2025,
   since_month: 5,
   since_date: 15,
@@ -212,7 +184,7 @@ let item_list = [{
 }, {
   title: "블랙야크",
   id: "blackyak",
-  icon: IMG__MOUNTAIN,
+  icon: "images/icon__hiking.svg",
   since_year: 2025,
   since_month: 10,
   since_date: 10,
@@ -250,8 +222,7 @@ let item_list = [{
   // },
 ];
 
-const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
-];
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 function deg2rad(deg) {
   return deg * Math.PI / 180;
@@ -346,22 +317,22 @@ function card_spread(data, key, type) {
 
       let tag =
         "<span class='tag'>" +
-        (data[i].tag.indexOf("web") != -1 ? "<img title='웹 앱' src='" + (is_light ? IMG__WEB_DARK : IMG__WEB) + "'>" : "") +
-        (data[i].tag.indexOf("android") != -1 ? "<img title='안드로이드 앱' src='" + (is_light ? IMG__ANDROID_DARK : IMG__ANDROID) + "'>" : "") +
-        (data[i].tag.indexOf("lang") != -1 ? "<img title='언어 / 문자 / 유니코드' src='" + (is_light ? IMG__LANG_DARK : IMG__LANG) + "'>" : "") +
-        (data[i].tag.indexOf("art") != -1 ? "<img title='예술' src='" + (is_light ? IMG__ART_DARK : IMG__ART) + "'>" : "") +
-        (data[i].tag.indexOf("game") != -1 ? "<img title='확률 / 주사위 굴림' src='" + (is_light ? IMG__GAME_DARK : IMG__GAME) + "'>" : "") +
-        (data[i].tag.indexOf("work") != -1 ? "<img title='업무' src='" + (is_light ? IMG__WORK_DARK : IMG__WORK) + "'>" : "") +
-        (data[i].tag.indexOf("qualified") != -1 ? "<img title='자기개발' src='" + (is_light ? IMG__QUALIFIED_DARK : IMG__QUALIFIED) + "'>" : "") +
-        (data[i].tag.indexOf("alcohol") != -1 ? "<img title='한잔해' src='" + (is_light ? IMG__COCKTAIL_DARK : IMG__COCKTAIL) + "'>" : "") +
-        (data[i].tag.indexOf("fitness") != -1 ? "<img title='피트니스' src='" + (is_light ? IMG__FITNESS_DARK : IMG__FITNESS) + "'>" : "") +
+        (data[i].tag.indexOf("web") != -1 ? `<img title='웹 앱' class='${is_light ? "" : "dark"}' src='images/icon__globe.svg'>` : "") +
+        (data[i].tag.indexOf("android") != -1 ? `<img title='안드로이드 앱' class='${is_light ? "" : "dark"}' src='images/icon__android.svg'>` : "") +
+        (data[i].tag.indexOf("lang") != -1 ? `<img title='언어 / 문자 / 유니코드' class='${is_light ? "" : "dark"}' src='images/icon__language.svg'>` : "") +
+        (data[i].tag.indexOf("art") != -1 ? `<img title='예술' class='${is_light ? "" : "dark"}' src='images/icon__pallete.svg'>` : "") +
+        (data[i].tag.indexOf("game") != -1 ? `<img title='확률 / 주사위 굴림' class='${is_light ? "" : "dark"}' src='images/icon__dice.svg'>` : "") +
+        (data[i].tag.indexOf("work") != -1 ? `<img title='업무' class='${is_light ? "" : "dark"}' src='images/icon__work.svg'>` : "") +
+        (data[i].tag.indexOf("qualified") != -1 ? `<img title='자기개발' class='${is_light ? "" : "dark"}' src='images/icon__verified.svg'>` : "") +
+        (data[i].tag.indexOf("alcohol") != -1 ? `<img title='한잔해' class='${is_light ? "" : "dark"}' src='images/icon__cocktail.svg'>` : "") +
+        (data[i].tag.indexOf("fitness") != -1 ? `<img title='피트니스' class='${is_light ? "" : "dark"}' src='images/icon__cardiology.svg'>` : "") +
         "</span>"
       // + "<br><span class='itag'>" + tag(i) + "</span>"
 
       $("section").append(
         `<div class='item ${data[i].id}'>
           <a href='${data[i].url}' class='card ${(is_light ? "light" : "")}' style='background:${data[i].theme}'>
-            <img class='icon' src='${data[i].icon}'>
+            <img class='icon ${is_light ? "" : "dark"}' src='${data[i].icon}'>
               <span class='title'>${data[i].title.toUpperCase()}</span>
               <span class='date'>${month}/${year}</span>
               <span class='url'>${data[i].url.toUpperCase()}</span>
@@ -490,7 +461,7 @@ function card_add(num) {
     item_list.push({
       title: `#${theme_temp}`,
       id: "",
-      icon: "images/trans2.png",
+      icon: "images/icon__favorite.svg",
       since_year: new Date().getFullYear(),
       since_month: new Date().getMonth() + 1,
       since_date: new Date().getDate(),

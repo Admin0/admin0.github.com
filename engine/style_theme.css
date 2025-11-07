@@ -64,7 +64,7 @@
 }
 
 .cocktail .card {
-  background: linear-gradient(to right, #86ff94 0%, #99e265 40%, #35e5a0 80%) !important;
+  background: linear-gradient(to right, #35e5a0 20%, #99e265 80%, #86ff94 100%) !important;
 }
 
 .blackyak .card {
