@@ -64,11 +64,16 @@
 }
 
 .cocktail .card {
-  background: linear-gradient(to right, #35e5a0 20%, #99e265 80%, #86ff94 100%) !important;
+  background: linear-gradient(to right, #35e5a0 0%, #35aae1 80%, #367aff 100%) !important;
+  /* background: linear-gradient(to right, #35e5a0 20%, #99e265 80%, #86ff94 100%) !important; */
 }
 
 .blackyak .card {
-   /* background: linear-gradient(to right, #00897B 0%, #00897B 30%, #00C853 100%) !important; */
+  /* background: linear-gradient(to right, #00897B 0%, #00897B 30%, #00C853 100%) !important; */
+}
+
+.commit .card {
+  background: linear-gradient(to bottom, rgb(0, 77, 64) 0%, rgb(0, 255, 127) 100%) !important;
 }
 
 /*******************

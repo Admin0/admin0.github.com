@@ -192,6 +192,17 @@ let item_list = [{
   description: "블랙야크 제품은 비싸도 좀 봐준다.",
   tag: ["web", "qualified", "fitness"],
   theme: "#e60019"
+}, {
+  title: "잔디심기",
+  id: "commit",
+  icon: "images/icon__run.svg",
+  since_year: 2025,
+  since_month: 10,
+  since_date: 10,
+  url: "/bucket/잔디심기/",
+  description: "나란 인간 어디까지 꾸준할 수 있을까 평가 기록.",
+  tag: ["web", "qualified", "fitness"],
+  theme: "#004d40"
 }
 
   // {
